@@ -1,0 +1,1052 @@
+.contacts {
+    display: none;
+    position: absolute;
+    top: 0%;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23, 30, 79);
+    opacity: 0.0;
+    
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.contacts > .mainscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.contacts > .mainscreen > .header {
+    position: relative;
+    width: 95%;
+    height: 35%;
+    margin: 0 auto;
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.25), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.contacts > .mainscreen > .header > .left {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    left: 8%;
+}
+
+.contacts > .mainscreen > .header > .left > .icon {
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.contacts > .mainscreen > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+    margin-top: -1px;
+
+    font-family: PoppinsBolder;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.contacts > .mainscreen .player {
+    display: flex;
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 87%;
+    height: 4vw;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+.contacts > .mainscreen .player > .avatar {
+    position: relative;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.2vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    line-height: 3vw;
+    object-fit: cover;
+}
+
+.contacts > .mainscreen .player > .data {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    transform: translateY(-50%);
+}
+
+.contacts > .mainscreen .player > .data > .name {
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 6.5vw;
+    height: 1vw;
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+    color: white;
+}
+
+.contacts > .mainscreen .player > .data > .number  {
+    margin: 0;
+
+    height: 1vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.589);
+    letter-spacing: 0.03vw;
+}
+
+.contacts > .mainscreen .player > .shareowncontact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+
+    width: 1.5vw;
+    height: 100%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.1s background-color;
+}
+
+.contacts > .mainscreen .player > .shareowncontact:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contacts > .mainscreen > .search {
+    position: relative;
+    width: 82%;
+
+    margin: 0.7vw auto;
+}
+
+.contacts > .mainscreen > .search input {
+    display: block;
+    width: 100%;
+    height: 1.6vw;
+
+    outline: 0;
+    border: 0;
+
+    padding: 0 1vw 0 1.7vw;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: PoppinsRegular;
+    background-color: rgba(24, 55, 109, 0.5);
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+}
+
+.contacts > .mainscreen > .search .input-icon {
+    position: absolute;
+    left: 5%;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7vw;
+}
+
+.contacts > .mainscreen > .search input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.05s opacity;
+}
+
+.contacts > .mainscreen > .search input:focus::placeholder {
+    opacity: 0.0;
+}
+
+.contacts > .mainscreen > .noresults {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contacts > .mainscreen > .noresults > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.2vw;
+
+    width: 10vw;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contacts > .mainscreen > .noresults > .title { 
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.9vw;
+}
+
+.contacts > .mainscreen > .noresults > .description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.contacts > .mainscreen > .contactlist {
+    position: relative;
+
+    width: 100%;
+    height: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.contacts > .mainscreen > .contactlist::-webkit-scrollbar {
+    display: none;
+}
+
+.contacts > .mainscreen > .contactlist > * {
+    width: 100%;
+}
+
+.contacts > .mainscreen > .contactlist > .searchresults > .title {
+    font-size: 0.5vw;
+    color: white;
+}
+
+.contacts > .mainscreen > .contactlist > * > .title {
+    position: relative;
+    width: 100%;
+    height: 1.15vw;
+    background-color: rgba(49, 167, 223, 0.59);
+
+    padding-left: 2vw;
+    margin: 0;
+    line-height: 1.15vw;
+
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: white;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact {
+    position: relative;
+    
+    width: 100%;
+    height: 2.6vw;
+    transition: 0.2s background;
+    background: rgba(24, 55, 109, 0.3);
+    padding-left: 2vw;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact:last-child {
+    margin-bottom: 1vw;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact:nth-child(odd) {
+    background-color: transparent;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact:hover {
+    background-color: #18376dda;
+    cursor: pointer;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact > .avatar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 1.6vw;
+    height: 1.6vw;
+    border-radius: 3vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.6vw;
+
+    object-fit: cover;
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact > .name {
+    position: absolute;
+    top: -2%;
+    left: 24%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+    color: white;    
+}
+
+.contacts > .mainscreen > .contactlist > * > .contact > .number {
+    position: absolute;
+    top: 29%;
+    left: 24%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.582);    
+}
+
+.contacts > .mainscreen > .newcontactbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 9%;
+    right: 9%;
+
+    color: white;
+    font-size: 1.1vw;
+
+    width: 2.3vw;
+    height: 2.3vw;
+    background-color: #31A7DF;
+    border-radius: 5vw;
+    transition: 0.1s;
+}
+
+.contacts > .mainscreen > .newcontactbutton:hover {
+    background-color: #3fbbf5;
+    cursor: pointer;
+}
+
+/* -------------------- */
+/* NEW CONTACT DIZAINAS */
+/* -------------------- */
+.newcontact {
+    position: absolute;
+    top: 0%;
+    transform: translate3d(110%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(23, 30, 79);
+    transition: 0.35s;
+}
+
+.newcontact.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.newcontact > .header {
+    position: absolute;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.35), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.newcontact > .header > .menu {
+    position: absolute;
+    width: 26%;
+    height: 100%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.4), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.12), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.07), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.12);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    transition: 0.2s;
+}
+
+.newcontact > .header > .menu:hover {
+    background-color: rgba(18, 93, 135, 0.4);
+}
+
+.newcontact > .header > .menu > .icon {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+
+    font-size: 1.6vw;
+    color: white;
+    pointer-events: none;
+}
+
+.newcontact > .header > .left {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+}
+
+.newcontact > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.newcontact > .inputs {
+    position: absolute;
+    top: 21.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.newcontact > .inputs .image {
+    position: relative;
+}
+
+.newcontact > .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #31a8dfe1;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.newcontact > .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.newcontact > .inputs .upload:hover {
+    background-color: #31a8df;
+    cursor: pointer;
+}
+
+.newcontact > .inputs label {
+    display: block;
+    margin-left: 1vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.newcontact > .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 12.5vw;
+    height: 2.4vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background: rgba(28, 162, 238, 0.19);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.newcontact > .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.newcontact > .inputs button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    outline: 0;
+    padding: 0;
+    transition: 0.1s;
+}
+
+/* ---------------- */
+/* CONTACT DIZAINAS */
+/* ---------------- */
+.contacts > .contactscreen {
+    position: absolute;
+    transform: translate3d(-100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(23, 30, 79);
+    transition: 0.35s;
+}
+
+.contacts > .contactscreen.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.contacts > .contactscreen > .header {
+    position: absolute;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.35), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.contacts > .contactscreen > .header > .menu {
+    position: absolute;
+    width: 26%;
+    height: 100%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.4), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.12), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.07), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.12);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    transition: 0.2s;
+}
+
+.contacts > .contactscreen > .header > .menu:hover {
+    background-color: rgba(18, 93, 135, 0.4);
+}
+
+.contacts > .contactscreen > .header > .menu > .icon {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+
+    font-size: 1.6vw;
+    color: white;
+    pointer-events: none;
+}
+
+.contacts > .contactscreen > .header > .left {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+}
+
+.contacts > .contactscreen > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.contacts > .contactscreen > .info {
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 76%;
+    height: 7.75vw;
+    background-color: rgba(24, 55, 109, 0.3);
+
+    border-radius: 1vw;
+}
+
+.contacts > .contactscreen > .info > .avatar {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 3.5vw;
+    height: 3.5vw;
+    border-radius: 1vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 1.1vw;
+    color: white;
+
+    text-align: center;
+    line-height: 3.5vw;
+
+    object-fit: cover;
+}
+
+.contacts > .contactscreen > .info > .name {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+
+    margin: 0;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    text-align: center;
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    color: white;
+    user-select: text;
+}
+
+.contacts > .contactscreen > .info > .number {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+
+    margin: 0;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-align: center;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+    user-select: text;
+}
+
+.contacts > .contactscreen > .buttons {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contacts > .contactscreen > .buttons > .button {
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 1.8vw;
+    height: 1.8vw;
+    background-color: #31A7DF;
+    border-radius: 0.5vw;
+    
+    margin: 0.15vw;
+    transition: 0.1s;
+}
+
+.contacts > .contactscreen > .buttons > .button:hover {
+    background-color: #5bc6f8;
+    cursor: pointer;
+}
+
+.contacts > .contactscreen > .buttons > .grey:hover {
+    background-color: rgba(113, 222, 255, 0.295) !important;
+}
+
+.contacts > .contactscreen > .buttons > .button > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 0.8vw;
+    color: white;
+}
+
+.contacts > .contactscreen > .calls {
+    position: absolute;
+    top: 61%;
+    
+    width: 100%;
+    height: 45%;
+}
+
+.contacts > .contactscreen > .calls > .title {
+    position: absolute;
+    left: 11%;
+
+    margin: 0;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-align: center;
+    line-height: 1vw;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgb(255, 255, 255);
+}
+
+.contacts > .contactscreen > .calls > .clear {
+    position: absolute;
+    right: 11%;
+
+    margin: 0;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    text-align: center;
+    line-height: 1vw;
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.63);
+}
+
+.contacts > .contactscreen > .calls > .clear:hover {
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.contacts > .contactscreen > .calls > .callslist {
+    position: absolute;
+    top: 11%;
+
+    width: 100%;
+    height: 60%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.contacts > .contactscreen > .calls > .callslist::-webkit-scrollbar {
+    display: none;
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call {
+    position: relative;
+    
+    width: 100%;
+    height: 2.6vw;
+    transition: background 0.2s, height 0.3s;
+    background: rgba(24, 55, 109, 0.3);
+    padding-left: 2vw;
+    overflow: hidden;
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call:nth-child(even) {
+    background-color: transparent;
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call:hover {
+    background-color: #18376dda;
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call > * {
+    transition: opacity 0.1s;
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call > .name {
+    position: absolute;
+    top: -4%;
+    left: 10%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.884);
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call > .number {
+    position: absolute;
+    top: 29%;
+    left: 10%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    letter-spacing: 0.01vw;
+    color: rgba(255, 255, 255, 0.432);
+}
+
+.contacts > .contactscreen > .calls > .callslist > .call > .time {
+    position: absolute;
+    top: 51%;
+    transform: translateY(-50%);
+    right: 21%;
+    text-align: right;
+    margin: 0;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    letter-spacing: 0.01vw;
+    color: rgba(255, 255, 255, 0.432);
+}
+
+/* --------------------- */
+/* EDIT CONTACT DIZAINAS */
+/* --------------------- */
+.contacts > .editcontact {
+    position: absolute;
+    top: 0%;
+    transform: translate3d(100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgb(23, 30, 79);
+    transition: 0.35s;
+}
+
+.contacts > .editcontact.visible {
+    transform: translate3d(0, 0, 0);
+}
+
+.contacts > .editcontact > .header {
+    position: absolute;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.35), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.contacts > .editcontact > .header > .menu {
+    position: absolute;
+    width: 26%;
+    height: 100%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.4), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.12), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.07), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.12);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    transition: 0.2s;
+}
+
+.contacts > .editcontact > .header > .menu:hover {
+    background-color: rgba(18, 93, 135, 0.4);
+}
+
+.contacts > .editcontact > .header > .menu > .icon {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+
+    font-size: 1.6vw;
+    color: white;
+    pointer-events: none;
+}
+
+.contacts > .editcontact > .header > .left {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+}
+
+.contacts > .editcontact > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.contacts > .editcontact > .inputs {
+    position: absolute;
+    top: 21.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contacts > .editcontact > .inputs .image {
+    position: relative;
+}
+
+.contacts > .editcontact > .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #31a8dfe1;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.contacts > .editcontact > .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.contacts > .editcontact > .inputs .upload:hover {
+    background-color: #31a8df;
+    cursor: pointer;
+}
+
+.contacts > .editcontact > .inputs label {
+    display: block;
+    margin-left: 1vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.contacts > .editcontact > .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 12.5vw;
+    height: 2.4vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background: rgba(28, 162, 238, 0.19);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.contacts > .editcontact > .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.contacts > .editcontact > .inputs button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    outline: 0;
+    padding: 0;
+    transition: 0.1s;
+}
+
+/* mygtukÅ³ stiliai */
+.contacts .fill {
+    border: 0;
+    color: white;
+    background-color: #31A7DF;
+}
+
+.contacts .nofill {
+    background: rgba(255, 255, 255, 0.02);
+    border: solid 0.1vw rgba(163, 175, 197, 0.1);
+    color: #A3AFC5;
+}
+
+.contacts .fill:hover {
+    background-color: #57c3f5;
+}
+
+.contacts .nofill:hover {
+    background-color: rgba(163, 175, 197, 0.15);
+}
+
+.newcontact .fill {
+    border: 0;
+    color: white;
+    background-color: #31A7DF;
+}
+
+.newcontact .nofill {
+    background: rgba(255, 255, 255, 0.02);
+    border: solid 0.1vw rgba(163, 175, 197, 0.1);
+    color: #A3AFC5;
+}
+
+.newcontact .fill:hover {
+    background-color: #57c3f5;
+}
+
+.newcontact .nofill:hover {
+    background-color: rgba(163, 175, 197, 0.15);
+}

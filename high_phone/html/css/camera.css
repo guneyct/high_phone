@@ -1,0 +1,443 @@
+.camera {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.camera.lock-screen,
+.camera.bottom {
+    transition: transform 0.3s;
+}
+
+.zoom {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    width: 1.1vw;
+    height: 1.1vw;
+    border: solid 0.1vw rgb(255, 255, 255);
+    border-radius: 3vw;
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: white;
+    line-height: 1.1vw;
+}
+
+.camera > .gameview {
+    position: absolute;
+    top: 48%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+
+    width: 250%;
+    height: 70%;
+    transform-style: preserve-3d;
+    animation-timing-function: ease-in-out;
+    transition: opacity 0.2s;
+}
+
+.rotated180 {
+    animation: rotate 1s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateY(0deg) scaleX(1) scaleY(1);
+    filter: blur(0px)
+  }
+  25% {
+    transform: translate(-50%, -50%) rotateY(90deg) scaleX(1) scaleY(0.8);
+    filter: blur(0px)
+  }
+  26% {
+    transform: translate(-50%, -50%) rotateY(90deg) scaleX(-1) scaleY(0.8);
+    filter: blur(15px)
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateY(180deg) scaleX(-1) scaleY(1.0);
+    filter: blur(15px)
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateY(180deg) scaleX(-1) scaleY(1.0);
+    filter: blur(0px)
+  }
+}
+
+.camera > .top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 15%;
+    background-color: black;
+}
+
+.camera > .top > .icon {
+    position: absolute;
+    top: 58%;
+    left: 12%;
+
+    margin: 0;
+
+    font-size: 0.8vw;
+    color: #ffffff;
+}
+
+.camera > .bottom {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.camera > .bottom > #cancel-takephoto {
+    position: absolute;
+    bottom: 44%;
+    left: 12%;
+
+    margin: 0;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 99999;
+    transition: 0.1s color;
+}
+
+.camera > .bottom > #cancel-takephoto:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.camera > .preview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    
+    background-color: black;
+}
+
+.camera > .preview > img {
+    position: absolute;
+    bottom: 20%;
+
+    width: 100%;
+    height: 60%;
+
+    object-fit: cover;
+}
+
+.camera > .preview > .bottom {
+    position: absolute;
+    bottom: 0;
+    
+    width: 100%;
+    height: 15%;
+    background-color: rgb(32, 32, 32);
+}
+
+.camera > .preview > .bottom > #retake-photo {
+    position: absolute;
+    bottom: 55%;
+    left: 12%;
+
+    margin: 0;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 99999;
+    transition: 0.1s color;
+}
+
+.camera > .preview > .bottom > #use-photo {
+    position: absolute;
+    bottom: 55%;
+    right: 12%;
+
+    margin: 0;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 99999;
+    transition: 0.1s color;
+}
+
+.camera > .preview > .bottom > #use-photo:hover, .camera > .preview > .bottom > #retake-photo:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.camera > .images {
+    position: absolute;
+    bottom: 7.5%;
+    left: 12%;
+    transform: translate(0%, 0%);
+
+    background-color: rgb(20, 20, 20);
+    width: 1.7vw;
+    height: 1.7vw;
+    z-index: 9999;
+    transition: 0.25s;
+    overflow: hidden;
+}
+
+.camera > .images > .content {
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0%);
+    transition: 0.25s;
+}
+
+.camera > .images > .content > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.camera > .bottom > .modes {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s width;
+}
+
+.camera > .bottom > .modes > .carousel {
+    display: flex;
+    gap: 1vw;
+    transition: 0.2s transform;
+}
+
+.camera > .bottom > .modes p {
+    flex-shrink: 0;
+    margin: 0;
+
+    text-align: center;
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: white;
+
+    transition: 0.2s color;
+    cursor: pointer;
+}
+
+.camera > .bottom > .modes p.active {
+    font-family: PoppinsMedium;
+    color: #FFD60A;
+}
+
+.camera > .bottom > .photo {
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 2.05vw;
+    height: 2.05vw;
+    background-color: white;
+    border-radius: 3vw;
+    box-shadow: inset 0.0vw 0.0vw 0.0vw 0.1vw black;
+    border: 0.2vw solid white;
+    transition: 0.1s;
+}
+
+.camera > .bottom > .photo:hover {
+    background-color: rgba(255, 255, 255, 0.849);
+}
+
+.camera > .bottom > .rotate {
+    position: absolute;
+    bottom: 44%;
+    right: 12%;
+
+    width: 1.3vw;
+    transition: 0.05s;
+}
+
+.camera > .bottom > .rotate:hover {
+    opacity: 0.8;
+}
+
+/* --------------- */
+/* PHOTOS DIZAINAS */
+/* --------------- */
+
+.camera .image-focus {
+    bottom: 0%; 
+    left: 0%;
+
+    width: 100% !important;
+    height: 88% !important;
+}
+
+.camera > .photos > * {
+    z-index: 99999;
+}
+
+.camera > .photos > .header {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 14%;
+    backdrop-filter: blur(0.5vw);
+    background-color: rgba(43, 43, 43, 0.63);
+}
+
+.camera > .photos > .header > .photos-back {
+    position: absolute;
+    top: 60%;
+    left: 8%;
+
+    font-size: 0.8vw;
+    color: white;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.camera > .photos > .header > .photos-back:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.camera > .photos > .header > .airdrop-image {
+    position: absolute;
+    top: 60%;
+    right: 8%;
+
+    color: white;
+    font-size: 0.75vw;
+    
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.camera > .photos > .header > .airdrop-image:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.camera > .photos > .header > .date {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.7vw;
+    color: white;
+    font-family: PoppinsMedium;
+    text-align: center;
+}
+
+.camera > .photos > .header > .date > * {
+    margin: 0;
+}
+
+.camera > .photos > .controls {
+    position: absolute;
+    bottom: 4%;
+
+    width: 100%;
+    height: 12%;
+}
+
+.camera > .photos > .controls > .imagenumber {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: rgba(255, 255, 255, 0.808);
+    font-size: 0.6vw;
+    font-family: PoppinsRegular;
+}
+
+.camera > .photos > .controls > .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    height: 2.2vw;
+
+    margin: 0;
+
+    backdrop-filter: blur(0.5vw);
+    border-radius: 0.5vw;
+}
+
+.camera > .photos > .controls > .center > .imagelink {
+    display: block;
+    margin: 0 auto;
+
+    color: white;
+    font-family: Poppins;
+    text-align: center;
+    line-height: 2.2vw;
+    font-size: 0.6vw;
+
+    width: 90%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: text;
+}
+
+.camera > .photos > .controls > .center > .imagelink:hover {
+    cursor: pointer;
+}
+
+/*.camera > .photos > .controls > .imagelink > .icon {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+
+    font-size: 0.8vw;
+    color: rgb(255, 255, 255);
+    transition: 0.05s;
+}*/
+
+.camera > .photos > .controls > .back, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 0.9vw;
+    color: white;
+    transition: color 0.05s;
+}
+
+.camera > .photos > .controls > .back:hover, .next:hover {
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.camera > .photos > .controls > .back {
+    right: 7%;
+}
+
+.camera > .photos > .controls > .next {
+    left: 7%;
+}

@@ -1,0 +1,123 @@
+#callscreen {
+    position: absolute;
+    top: -100%;
+    left: 0%;
+    background: url(../media/callbg.png) no-repeat center;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 99999;
+    transition: top 0.5s;
+}
+
+#callscreen > .avatar {
+    display: block;
+    position: relative;
+    margin: 4.5vw auto 0vw auto;
+    
+    width: 5.2vw;
+    height: 5.2vw;
+    border-radius: 1.5vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 1.5vw;
+    color: white;
+
+    text-align: center;
+    line-height: 5.2vw;
+
+    object-fit: cover;
+}
+
+#callscreen > .name, #callscreen > .number, #callscreen > .status {
+    margin: 0;
+    margin-top: 0.8vw;
+    text-align: center;
+    
+    font-size: 0.7vw;
+    font-family: Poppins;
+    color: white;
+    letter-spacing: 0.03vw;
+
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+#callscreen > .number {
+    font-size: 0.6vw;
+    margin-top: 0.4vw;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#callscreen > .status {
+    font-size: 0.6vw;
+    margin-top: 0.4vw;
+}
+
+#callscreen > .buttons {
+    display: flex;
+    justify-content: center;
+
+    margin: 2.5vw auto 0vw auto;
+
+    width: 80%;
+    height: 3.9vw;
+
+    background-color: rgba(24, 55, 109, 0.3);
+    border-radius: 1.5vw;
+}
+
+#callscreen > .buttons > .button {
+    position: relative;
+    width: 2.1vw;
+    height: 2.1vw;
+    background-color: #31A7DF;
+    border-radius: 0.5vw;
+    
+    margin: auto 0.5vw;
+    transition: 0.1s;
+}
+
+#callscreen > .buttons > .button:hover {
+    background-color: #5bc6f8;
+}
+
+#callscreen > .buttons > .button > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 0.8vw;
+    color: white;
+}
+
+#callscreen > #endcall {
+    display: flex;
+    position: relative;
+
+    width: 2.5vw;
+    height: 2.5vw;
+    background: linear-gradient(to bottom right, #FA8867, #FE5C5C);
+    border-radius: 0.9vw;
+    
+    margin: 2vw auto 0vw auto;
+    box-shadow: 0.2vw 0.2vw 2vw 0 rgba(238, 71, 49, 0.5);
+    transition: 0.2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+#callscreen > #endcall:hover {
+    transform: scale3d(1.1, 1.1, 1);
+    cursor: pointer;
+}
+
+#callscreen > #endcall > * {
+    margin: auto auto;
+
+    font-size: 0.8vw;
+    color: white;
+}

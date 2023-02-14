@@ -1,0 +1,1168 @@
+.bank {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.bank > .header > .box1 {
+    position: absolute;
+    top: -7%;
+    left: -3%;
+    width: 150%;
+    height: 25%;
+    background-color: #242C3A;
+
+    transform: rotate(-5deg);
+    z-index: 1;
+}
+
+.bank > .header > .box2 {
+    position: absolute;
+    top: -1%;
+    width: 150%;
+    height: 25%;
+    background-color: rgba(36, 44, 58, 0.47);
+
+    transform: rotate(10deg);
+    z-index: 2;
+}
+
+.bank > .header > .title {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: white;
+    font-family: Exotc;
+    font-size: 1.2vw;
+    white-space: nowrap;
+    
+    z-index: 3;
+}
+
+/* -------------------- */
+/* CHOOSE CARD DIZAINAS */
+/* -------------------- */
+.bank > .choose {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transition: 0.35s;
+}
+
+.bank > .choose > .title {
+    position: absolute;
+    top: 23%;
+    left: 10%;
+
+    color: rgba(255, 255, 255, 0.678);
+    font-family: Poppins;
+    font-size: 0.6vw;
+}
+
+.bank > .choose > .cards {
+    position: absolute;
+    top: 29%;
+
+    width: 100%;
+    height: 53%;
+    overflow-y: auto;
+}
+
+.bank > .choose > .cards::-webkit-scrollbar {
+    display: none;
+}
+
+.bank > .choose > .cards > .card {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 82%;
+    height: 6.5vw;
+
+    margin-top: 1vw;
+
+    background-color: #242D3A;
+    border-radius: 0.8vw;
+
+    filter: blur(0.2vw);
+    box-shadow: none;
+    transition: 0.2s;
+}
+
+.bank > .choose > .cards > .selected {
+    filter: none;
+    box-shadow: 0vw 0vw 1vw 0.26vw rgba(255, 255, 255, 0.07);
+}
+
+.bank > .choose > .cards > .card > .icon {
+    display: flex;
+    position: absolute;
+    top: 19.5%;
+    right: 10%;
+}
+
+.bank > .choose > .cards > .card > .icon > .circle1 {
+    margin: -0.15vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: #F85555;
+    border-radius: 3vw;
+}
+
+.bank > .choose > .cards > .card > .icon > .circle2 {
+    margin: -0.15vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: #FFB800;
+    border-radius: 3vw;
+}
+
+.bank > .choose > .cards > .card > .name {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+
+    margin: 0;
+
+    color: white;
+    font-family: Exotc;
+    font-size: 1vw;
+}
+
+.bank > .choose > .cards > .card > .card-number {
+    position: absolute;
+    top: 36%;
+    left: 8%;
+
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8vw;
+    letter-spacing: -1px;
+}
+
+.bank > .choose > .cards > .card > .holder {
+    position: absolute;
+    top: 66%;
+    left: 8%;
+
+    color: rgba(255, 255, 255, 0.918);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.45vw;
+    letter-spacing: 0.04vw;
+}
+
+.bank > .choose > .cards > .card > .expires-title {
+    position: absolute;
+    top: 60%;
+    right: 8%;
+    transform: scaleX(0.9);
+
+    color: rgba(255, 255, 255, 0.651);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.4vw;
+    letter-spacing: 0.04vw;
+}
+
+.bank > .choose > .cards > .card > .expires {
+    position: absolute;
+    top: 65%;
+    right: 8%;
+    width: 3vw;
+    text-align: center;
+
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.55vw;
+    letter-spacing: 0.04vw;
+}
+
+.bank > .choose > .select {
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 82%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+/* -------------------- */
+/* MAIN SCREEN DIZAINAS */
+/* -------------------- */
+.bank > .mainscreen {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.35s;
+}
+
+.bank > .mainscreen > .box {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5.5vw;
+
+    width: 80%;
+    height: 12%;
+    background-color: rgba(31, 41, 56, 0.31);
+    border-radius: 0.5vw;
+}
+
+.bank > .mainscreen > .box > .title {
+    position: absolute;
+    left: 7%;
+    top: 23%;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .box > .title.clickable:hover {
+    color: rgb(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.bank > .mainscreen > .box > .balance {
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    margin: 0;
+
+    color: #9FCFF1;
+    font-size: 0.85vw;
+    font-family: PoppinsMedium;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .buttons {
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0.5vw;
+
+    width: 80%;
+}
+
+.bank > .mainscreen > .buttons > .button {
+    position: relative;
+    height: 3.5vw;
+    
+    flex-grow: 1;
+
+    background: linear-gradient(to bottom right, var(--color-1), var(--color-2));
+    margin: 0.3vw;
+    border-radius: 0.3vw;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .buttons > .button:hover {
+    transform: translateY(-5%);
+    cursor: pointer;
+}
+
+.bank > .mainscreen > .buttons > .button > * {
+    pointer-events: none;
+}
+
+.bank > .mainscreen > .buttons > .button > .icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1vw;
+    color: white;
+}
+
+.bank > .mainscreen > .buttons > .button > .title {
+    position: absolute;
+    bottom: 10%;
+
+    margin: 0;
+
+    width: 100%;
+    text-align: center;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: Poppins;
+}
+
+.bank > .mainscreen > .statement-title {
+    position: relative;
+    left: 16%;
+    margin: 0;
+    margin-top: 0.5vw;
+
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0.3vw;
+
+    background-color: rgba(31, 41, 56, 0.31);
+
+    /* padding-top: 0.5vw;
+    padding-left: 0.3vw; */
+
+    border-radius: 0.5vw;
+
+    width: 80% !important;
+    height: 42% !important;
+}
+
+.bank > .mainscreen > .statement > .buttons {
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0.2vw;
+
+    width: 80%;
+}
+
+.bank > .mainscreen > .statement > .buttons > .button {
+    position: relative;
+    height: 3.5vw;
+    
+    flex-grow: 1;
+    top: 1vw;
+    background: linear-gradient(to bottom right, var(--color-1), var(--color-2));
+    margin: 0.2vw;
+    border-radius: 0.3vw;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .buttons > .button:hover {
+    transform: translateY(-5%);
+    cursor: pointer;
+}
+
+.bank > .mainscreen > .statement > .buttons > .button > * {
+    pointer-events: none;
+}
+
+.bank > .mainscreen > .statement > .buttons > .button > .icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1vw;
+    color: white;
+}
+
+.bank > .mainscreen > .statement > .buttons > .button > .title {
+    position: absolute;
+    bottom: 10%;
+
+    margin: 0;
+
+    width: 100%;
+    text-align: center;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: Poppins;
+}
+
+.bank > .mainscreen > .statement > .box {
+    position: relative;
+    margin: 0.2vw;
+
+    width: 80%;
+    height: 17%;
+}
+
+.bank > .mainscreen > .statement > .box > .title {
+    position: absolute;
+    left: 3%;
+    top: 23%;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .box > .balance {
+    position: absolute;
+    left: 7%;
+    top: 70%;
+    margin: 0;
+
+    color: #9FCFF1;
+    font-size: 0.85vw;
+    font-family: PoppinsMedium;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .box2 {
+    position: relative;
+    margin: 0.2vw;
+    
+
+    width: 80%;
+    height: 17%;
+}
+
+.bank > .mainscreen > .statement > .box2 > .title {
+    position: absolute;
+    left: 3%;
+    top: 23%;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .box2 > .balance {
+    position: absolute;
+    left: 7%;
+    top: 70%;
+    margin: 0;
+
+    color: #9FCFF1;
+    font-size: 0.85vw;
+    font-family: PoppinsMedium;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .box3 {
+    position: relative;
+    margin: 0.2vw;
+    
+
+    width: 80%;
+    height: 17%;
+}
+
+.bank > .mainscreen > .statement > .box3 > .title {
+    position: absolute;
+    left: 3%;
+    top: 23%;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    transition: 0.1s;
+}
+
+.bank > .mainscreen > .statement > .box3 > .balance {
+    position: absolute;
+    left: 7%;
+    top: 70%;
+    margin: 0;
+
+    color: #9FCFF1;
+    font-size: 0.85vw;
+    font-family: PoppinsMedium;
+    transition: 0.1s;
+}
+
+/* ------------------------ */
+/* INVOICES SCREEN DIZAINAS */
+/* ------------------------ */
+.bank > .invoices {
+    position: absolute;
+    bottom: -100%;
+    
+    width: 100%;
+    height: 100%;
+    transition: 0.35s;
+}
+
+.bank > .invoices > .invoicelist {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 8.5vw;
+
+    padding: 0 0.3vw;
+    width: 85%;
+    height: 13vw;
+    overflow: auto;
+}
+
+.bank > .invoices > .invoicelist::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.bank > .invoices > .invoicelist::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.bank > .invoices > .invoicelist > .invoice {
+    position: relative;
+    width: 100%;
+    height: 4vw;
+
+    margin-bottom: 0.5vw;
+
+    background-color: rgba(31, 41, 56, 0.31);
+    border-radius: 0.5vw;
+    overflow: hidden;
+    transition: opacity 0.2s, margin 0.3s;
+}
+
+.bank .invoicelist > .invoice > .icon {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+
+    width: 1.7vw;
+    height: 1.7vw;
+
+    border-radius: 5vw;
+
+    font-size: 0.9vw;
+    color: white;
+}
+
+.bank .invoicelist > .invoice > .bill {
+    background-color: #c88941;
+}
+
+.bank .invoicelist > .invoice > .request {
+    background-color: #4b79be;
+}
+
+.bank .invoicelist > .invoice > .icon > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bank .invoicelist > .invoice > .content {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+
+    max-width: 6.5vw;
+}
+
+.bank .invoicelist > .invoice > .content > * {
+    margin: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bank .invoicelist > .invoice > .content > .title {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Poppins;
+    font-size: 0.6vw;
+}
+
+.bank .invoicelist > .invoice > .content > .description {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: Poppins;
+    font-size: 0.5vw;
+}
+
+.bank .invoicelist > .invoice > .buttons {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    display: flex;
+
+    position: absolute;
+    right: 0%;
+
+    height: 100%;
+    width: 1.8vw;
+}
+
+.bank .invoicelist > .invoice > .buttons > .button {
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    background-color: var(--background-color);
+    
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
+.bank .invoicelist > .invoice > .buttons > .button:hover {
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+.bank .invoicelist > .invoice > .buttons > .button > * {
+    font-size: 0.8vw;
+    color: white;
+}
+
+.bank > .invoices > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-top: 0.5vw;
+
+    width: 85%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .invoices > .paybills {
+    background-color: #C88941;
+}
+
+.bank > .invoices > .paybills:hover {
+    background-color: #eea653;
+}
+
+/* ------------------------ */
+/* TRANSFER SCREEN DIZAINAS */
+/* ------------------------ */
+.bank > .transfer {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    transition: 0.35s;
+}
+
+.bank > .transfer > .inputs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bank > .transfer > .inputs > label {
+    display: block;
+    margin-left: 0.6vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bank > .transfer > .inputs > input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9vw;
+
+    width: 12.5vw;
+    height: 2.3vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    background: #1F2938;
+    border-radius: 0.6vw;
+    box-sizing: border-box;
+}
+
+.bank > .transfer > .inputs > input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bank > .transfer > .inputs > .currency {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.692);
+    z-index: 9999;
+}
+
+.bank > .transfer > .inputs > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .transfer > .inputs > .transfer {
+    background-color: #7331ab;
+}
+
+.bank > .transfer > .inputs > .transfer:hover {
+    background-color: #9042d4;
+}
+
+/* ------------ CRYPTO TRANSFER ---------------- */
+.bank > .crypto-transfer {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    transition: 0.35s;
+}
+
+.bank > .crypto-transfer > .inputs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bank > .crypto-transfer > .inputs > label {
+    display: block;
+    margin-left: 0.6vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bank > .crypto-transfer > .inputs > input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9vw;
+
+    width: 12.5vw;
+    height: 2.3vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    background: #1F2938;
+    border-radius: 0.6vw;
+    box-sizing: border-box;
+}
+
+.bank > .crypto-transfer > .inputs > input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bank > .crypto-transfer > .inputs > .currency {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.692);
+    z-index: 9999;
+}
+
+.bank > .crypto-transfer > .inputs > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .crypto-transfer > .inputs > .trans {
+    background-color: #7331ab;
+}
+
+.bank > .crypto-transfer > .inputs > .trans:hover {
+    background-color: #9042d4;
+}
+/* ------------ CRYPTO SELL ---------------- */
+.bank > .crypto-sell {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    transition: 0.35s;
+}
+
+.bank > .crypto-sell > .inputs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bank > .crypto-sell > .inputs > label {
+    display: block;
+    margin-left: 0.6vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bank > .crypto-sell > .inputs > input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9vw;
+
+    width: 12.5vw;
+    height: 2.3vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    background: #1F2938;
+    border-radius: 0.6vw;
+    box-sizing: border-box;
+}
+
+.bank > .crypto-sell > .inputs > input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bank > .crypto-sell > .inputs > .currency {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.692);
+    z-index: 9999;
+}
+
+.bank > .crypto-sell > .inputs > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .crypto-sell > .inputs > .sell {
+    background-color: #7331ab;
+}
+
+.bank > .crypto-sell > .inputs > .sell:hover {
+    background-color: #9042d4;
+}
+/* ------------ CRYPTO BUY ---------------- */
+.bank > .crypto-buy {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    transition: 0.35s;
+}
+
+.bank > .crypto-buy > .inputs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bank > .crypto-buy > .inputs > label {
+    display: block;
+    margin-left: 0.6vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bank > .crypto-buy > .inputs > input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9vw;
+
+    width: 12.5vw;
+    height: 2.3vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    background: #1F2938;
+    border-radius: 0.6vw;
+    box-sizing: border-box;
+}
+
+.bank > .crypto-buy > .inputs > input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bank > .crypto-buy > .inputs > .currency {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.692);
+    z-index: 9999;
+}
+
+.bank > .crypto-buy > .inputs > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .crypto-buy > .inputs > .buy {
+    background-color: #7331ab;
+}
+
+.bank > .crypto-buy > .inputs > .buy:hover {
+    background-color: #9042d4;
+}
+
+/* ---------------------------- */
+/* ----------------------- */
+/* REQUEST SCREEN DIZAINAS */
+/* ----------------------- */
+.bank > .request {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 46);
+    transition: 0.35s;
+}
+
+.bank > .request > .inputs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bank > .request > .inputs > label {
+    display: block;
+    margin-left: 0.6vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.bank > .request > .inputs > input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.9vw;
+
+    width: 12.5vw;
+    height: 2.3vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    background: #1F2938;
+    border-radius: 0.6vw;
+    box-sizing: border-box;
+}
+
+.bank > .request > .inputs > input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.bank > .request > .inputs > .currency {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.692);
+    z-index: 9999;
+}
+
+.bank > .request > .inputs > button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsRegular;
+    outline: 0;
+    padding: 0;
+}
+
+.bank > .request > .inputs > .request {
+    background-color: #3668b4;
+}
+
+.bank > .request > .inputs > .request:hover {
+    background-color: #4681da;
+}
+
+/* mygtukų stiliai */
+.bank .fill {
+    border: 0;
+    color: white;
+    background-color: #1F2938;
+    transition: 0.1s;
+}
+
+.bank .nofill {
+    background: rgba(255, 255, 255, 0.02);
+    border: solid 0.1vw rgba(163, 175, 197, 0.1);
+    color: #A3AFC5;
+    transition: 0.1s;
+}
+
+.bank .fill:hover {
+    background-color: #2a3749;
+}
+
+.bank .nofill:hover {
+    background-color: rgba(163, 175, 197, 0.15);
+}

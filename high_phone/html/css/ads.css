@@ -1,0 +1,868 @@
+.ads {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.0;
+
+    background: url("../media/adsmail.png");
+    background-color: #252525;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.dark-mode .ads {
+    background: url("../media/adsmail.png");
+    background-color: #3f3f3f;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ads > .header > .title {
+    position: absolute;
+    top: 9%;
+    left: 7.5%;
+    
+    margin: 0;
+
+    color: white;
+    font-family: MonumentExtended;
+    font-size: 0.9vw;
+}
+
+.ads > .header > .description {
+    position: absolute;
+    top: 13%;
+    left: 7.5%;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Poppins;
+    font-size: 0.55vw;
+}
+
+.ads > .header > .buttons {
+    display: flex;
+    position: absolute;
+
+    top: 9.5%;
+    right: 5%;
+}
+
+.ads > .header > .buttons > #ads-notifications {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 1.5vw;
+    height: 1.5vw;
+
+    border-radius: 0.3vw;
+
+    margin-right: 0.4vw;
+    transition: 0.1s background-color;
+}
+
+.ads > .header > .buttons > #ads-notifications:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.ads > .header > .buttons > #ads-notifications > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 0.8vw;
+}
+
+.ads > .header > .buttons > button {
+    background-color: #edce60;
+    width: 3vw;
+    height: 1.5vw;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 0.5vw;
+    font-family: PoppinsMedium;
+
+    border-radius: 0.3vw;
+    box-shadow: 0 0 0.3vw #edce60;
+
+    outline: 0;
+    border: 0;
+    transition: 0.1s background-color;
+}
+
+.ads > .header > .buttons > button:hover {
+    background-color: #ffea9f;
+}
+
+.ads > .header > .backbutton {
+    position: absolute;
+
+    top: 9.5%;
+    right: 5%;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 0vw;
+    height: 1.5vw;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 0.5vw;
+    font-family: PoppinsMedium;
+
+    border-radius: 0.3vw;
+    color: white;
+
+    outline: 0;
+    border: 0;
+    transition: background-color 0.1s, width 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ads > .header > .backbutton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ads > .header > .backbutton > .icon {
+    margin-right: 0.3vw;
+}
+
+/* -------------------- */
+/* ADVERTISMENTS DESIGN */
+/* -------------------- */
+.ads > .mainbox {
+    position: absolute;
+    bottom: 0%; 
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 98%;
+    height: 77%;
+    background-color: white;
+
+    border-radius: 1.8vw 1.8vw 0 0;
+}
+
+.dark-mode .ads > .mainbox {
+    background-color: #1D1D1D;
+}
+
+.ads > .mainbox > .categories {
+    display: flex;
+    position: absolute;
+    top: -5%;
+    left: 5%;
+
+    width: 100%;
+    height: 4vw;
+    flex-wrap: nowrap;
+
+    overflow-x: scroll;
+}
+
+.ads > .mainbox > .categories::-webkit-scrollbar {
+    display: none;
+}
+
+.ads > .mainbox > .categories > .category {
+    flex-shrink: 0;
+
+    position: relative;
+    width: 2.9vw;
+    height: 2.9vw;
+    
+    background-color: white;
+
+    margin-right: 0.45vw;
+
+    box-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+    border-radius: 0.7vw;
+    transition: 0.2s;
+}
+
+.dark-mode .ads > .mainbox > .categories > .category {
+    background-color: #363636;
+    box-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.2);
+}
+
+.ads > .mainbox > .categories > .category:last-child {
+    margin-right: 1.3vw;
+}
+
+.ads > .mainbox > .categories > .category:hover {
+    cursor: pointer;
+    margin-top: 0.2vw;
+}
+
+.ads > .mainbox > .categories > .active {
+    background-color: #edce60;
+    
+    box-shadow: 0 0 0.3vw #edce60, 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .ads > .mainbox > .categories > .active {
+    background-color: #edce60;
+
+    box-shadow: 0 0 0.3vw #edce60, 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.ads > .mainbox > .categories > .category > .icon {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 1vw;
+}
+
+.ads > .mainbox > .categories > .category > .title {
+    position: absolute;
+    left: 50%;
+    bottom: 9%;
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    color: black;
+    font-family: PoppinsMedium;
+    font-size: 0.5vw;
+
+    max-width: 2.4vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dark-mode .ads > .mainbox > .categories > .category > .title,
+.dark-mode .ads .adslist > .ad > .title,
+.dark-mode .ads > .newadbox > .title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ads > .mainbox > .title {
+    position: absolute;
+    top: 13%;
+    left: 7.5%;
+    
+    margin: 0;
+
+    color: black;
+    font-family: TTNorms;
+    font-size: 0.8vw;
+    transition: 0.2s opacity;
+}
+
+.dark-mode .ads > .mainbox > .title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ads > .mainbox > .description {
+    position: absolute;
+    top: 18%;
+    left: 7.5%;
+    
+    margin: 0;
+    width: 7vw;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+    transition: 0.2s opacity;
+}
+
+.dark-mode .ads > .mainbox > .description,
+.dark-mode .ads .adslist > .ad > .content,
+.dark-mode .ads > .newadbox > .description {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ads > .mainbox > .adslist {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding-top: 3vw;
+
+    width: 100%;
+    height: 85%;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    -webkit-mask-size: 100% 20vw;
+    -webkit-mask-position: top;
+    -webkit-mask-repeat: no-repeat;
+    overflow: scroll;
+}
+
+.ads > .mainbox > .ads-loader {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: invert(80%);
+}
+
+.dark-mode .ads > .mainbox > .ads-loader {
+    filter: none;
+}
+
+.ads .adslist::-webkit-scrollbar {
+    display: none;
+}
+
+.ads .adslist > .ad:last-child {
+    margin-bottom: 30% !important;
+}
+
+.ads .adslist > .ad {
+    position: relative;
+
+    width: 85%;
+    min-height: 5vw;
+
+    margin: 0 auto;
+    margin-bottom: 0.6vw;
+
+    border-radius: 0.8vw;
+    background-color: white;
+    box-shadow: 0 0.5vw 0.8vw rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+    transition: opacity 0.2s, margin 0.3s;
+}
+
+.dark-mode .ads .adslist > .ad {
+    background-color: #373737;
+}
+
+.ads .adslist > .ad > .cover {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 92%;
+    height: 6.5vw;
+
+    margin-top: 0.4vw;
+    border-radius: 0.7vw;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ads .adslist > .ad > .cover:hover {
+    cursor: pointer;
+}
+
+.ads .adslist > .ad .job {
+    width: fit-content;
+    height: 1.3vw;
+
+    text-align: center;
+    line-height: 1.3vw;
+
+    font-family: PoppinsMedium;
+    font-size: 0.55vw;
+
+    padding: 0 0.8vw;
+    margin-left: 100%;
+    margin-bottom: 0.3vw;
+
+    border-radius: 0 0.5vw 0 0.5vw;
+    float: right;
+
+    background-color: white;
+    box-shadow: 0 0.5vw 0.8vw rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .ads .adslist > .ad .job {
+    background-color: #373737;
+    box-shadow: 0 0.5vw 0.8vw rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ads .adslist > .ad > .cover > .job {
+    margin-top: -0.1vw;
+    margin-right: -0.1vw;
+}
+
+.ads .adslist > .ad > .title {
+    display: block;
+    
+    margin: 0.5vw 0.8vw 0.4vw 0.8vw;
+
+    color: black;
+    font-family: TTNorms;
+    font-size: 0.8vw;
+}
+
+.dark-mode .ads .adslist > .ad > textarea.content,
+.dark-mode .ads .adslist > .ad > input.title {
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+.ads .adslist > .ad > input.title {
+    width: 80%;
+    padding: 0.3vw 0.5vw;
+
+    outline: 0;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0.4vw;
+    background: transparent;
+}
+
+.ads .adslist > .ad > .content {
+    display: block;
+
+    margin: 0 0.8vw 0.5vw;
+    
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+}
+
+.ads .adslist > .ad > textarea.content {
+    width: 80%;
+    padding: 0.5vw;
+    
+    outline: 0;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5vw;
+    background: transparent;
+
+    resize: vertical;
+}
+
+.ads .adslist > .ad > .data {
+    display: flex;
+    width: 80%;
+
+    margin: 0 0.8vw 0.5vw;
+}
+
+.ads .adslist > .ad > .data .databox {
+    display: flex;
+    align-items: center;
+
+    flex-grow: 0;
+
+    margin-right: 0.5vw;
+
+    position: relative;
+    height: 1.3vw;
+
+    padding: 0 0.5vw;
+
+    border-radius: 0.5vw;
+    background: rgba(0, 0, 0, 0.05);
+    transition: 0.1s background;
+}
+
+.dark-mode .ads .adslist > .ad > .data .databox {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ads .adslist > .ad > .data .databox:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .ads .adslist > .ad > .data .databox:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.ads .adslist > .ad > .data .databox > .icon {
+    font-size: 0.55vw;
+}
+
+.ads .adslist > .ad > .data .databox > .data {
+    margin: 0;
+    margin-left: 0.3vw;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+
+    max-width: 3.4vw;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dark-mode .ads .adslist > .ad > .data .databox > .data {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ads .adslist > .ad > hr { 
+    display: block; 
+    height: 0.1vw;
+
+    border: 0; 
+    border-top: 0.1vw solid rgb(219, 219, 219);
+
+    margin: 0.2vw 0; 
+}
+
+.dark-mode .ads .adslist > .ad > hr {
+    border-top: 0.1vw solid rgba(255, 255, 255, 0.1);
+}
+
+.ads .adslist > .ad > .bottom {
+    display: flex;
+    align-items: center;
+    margin: 0.4vw 0;
+
+    width: 100%;
+}
+
+.ads .adslist > .ad > .bottom > .author-avatar {    
+    width: 1vw;
+    height: 1vw;
+    border-radius: 5vw;
+
+    margin-left: 0.8vw;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    font-family: Poppins;
+    font-size: 0.5vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1vw;
+
+    object-fit: cover;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .author-avatar {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.ads .adslist > .ad > .bottom > .author-name {
+    margin: 0;
+    
+    margin-left: 0.3vw;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+
+    max-width: 6vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .author-name,
+.dark-mode .ads .adslist > .ad > .bottom > .timestamp {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.ads .adslist > .ad > .bottom > .timestamp {
+    margin: 0;
+    margin-left: auto;
+    margin-right: 0.8vw;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+}
+
+.ads .adslist > .ad > .bottom > .buttons {
+    display: flex;
+    position: relative;
+
+    height: 1.2vw;
+
+    margin-left: -0.3vw;
+    margin-right: 0.8vw;
+    margin-top: -0.1vw;
+
+    border-radius: 0.3vw;
+    overflow: hidden;
+}
+
+.ads .adslist > .ad > .bottom > .buttons > * {
+    position: relative;
+    height: 100%;
+    width: 1.2vw;
+
+    background-color: #f4f4f4;
+    transition: 0.1s background-color;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .buttons > * {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.ads .adslist > .ad > .bottom > .buttons > *:hover {
+    cursor: pointer;
+}
+
+.ads .adslist > .ad > .bottom > .buttons > .edit:hover {
+    background-color: #e0e0e0;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .buttons > .edit:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.ads .adslist > .ad > .bottom > .buttons > .delete:hover {
+    background-color: #ffcccc;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .buttons > .delete:hover {
+    background-color: rgba(255, 181, 181, 0.4);
+}
+
+.ads .adslist > .ad > .bottom > .buttons > *:nth-child(2) {
+    border-left: solid rgba(0, 0, 0, 0.05) 0.1vw;
+}
+
+.ads .adslist > .ad > .bottom > .buttons > * > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #697376;
+    font-size: 0.5vw;
+}
+
+.dark-mode .ads .adslist > .ad > .bottom > .buttons > * > .icon  {
+    color: white;
+}
+
+/* ----------------------- */
+/* NEW ADVERTISMENT DESIGN */
+/* ----------------------- */
+.ads > .newadbox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    
+    transform: translate3d(0, 100%, 0);
+
+    width: 98%;
+    height: 82%;
+    background-color: white;
+
+    border-radius: 1.8vw 1.8vw 0 0;
+    transition: transform 0.3s;
+}
+
+.ads > .newadbox.visible {
+    transform: translate3d(0, 0%, 0);
+}
+
+.dark-mode .ads > .newadbox {
+    background-color: #1D1D1D;
+}
+
+.ads > .newadbox > .title {
+    position: absolute;
+    top: 5%;
+    left: 7.5%;
+    margin: 0;
+    color: black;
+    font-family: TTNorms;
+    font-size: 0.8vw;
+    transition: 0.2s opacity;
+}
+
+.ads > .newadbox > .description {
+    position: absolute;
+    top: 10%;
+    left: 7.5%;
+    margin: 0;
+    width: 7vw;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+    transition: 0.2s opacity;
+}
+
+.ads > .newadbox > .inputs {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+}
+
+.ads > .newadbox > .inputs .image {
+    position: relative;
+}
+
+.ads > .newadbox > .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #edce60d2;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.ads > .newadbox > .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: black;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.ads > .newadbox > .inputs .upload:hover {
+    background-color: #edce60;
+    cursor: pointer;
+}
+
+.ads > .newadbox > .inputs label.input {
+    display: block;
+    margin-left: 0.5vw;
+
+    line-height: 1.1vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .ads > .newadbox > .inputs label.input {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ads > .newadbox > .inputs input[type="text"] {
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2vw;
+    font-size: 0.65vw;
+
+    padding-left: 0.7vw;
+    outline: 0;
+    border: 0;
+
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: #F4F4F4;
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+}
+
+.dark-mode .ads > .newadbox > .inputs input[type="text"],
+.dark-mode .ads > .newadbox > .inputs textarea {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .ads > .newadbox > .inputs input::placeholder,
+.dark-mode .ads > .newadbox > .inputs textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ads > .newadbox > .inputs input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.ads > .newadbox > .inputs textarea {
+    display: block;
+    margin-bottom: 0.4vw;
+    width: 100%;
+
+    height: 5vw;
+    font-size: 0.65vw;
+    padding-top: 0.5vw;
+    padding-left: 0.7vw;
+
+    outline: 0;
+    border: 0;
+    
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: #F4F4F4;
+    border-radius: 0.5vw;
+
+    box-sizing: border-box;
+    overflow: scroll;
+    resize: none;
+}
+
+.ads > .newadbox > .inputs textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.ads > .newadbox > .inputs .checkmarks {
+    display: flex;
+    margin: 0.6vw 0 0.7vw;
+}
+
+.ads > .newadbox > .inputs .checkmarks > *:not(:first-child) {
+    margin-left: 0.5vw;
+}
+
+.ads > .newadbox > .inputs button {
+    display: block;
+    margin-top: 0.5vw;
+    width: 100%;
+    height: 2.1vw;
+    border-radius: 0.4vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    outline: 0;
+    border: 0;
+    
+    padding: 0;
+    transition: 0.1s;
+
+    background-color: #edce60;
+    box-shadow: 0 0 0.3vw #edce60, 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .ads .bottomline > div {
+    background-color: white !important;
+}
+
+.dark-mode .ads .checkmark {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: solid 0.01vw rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-mode .ads label.container.dark {
+    color: rgba(255, 255, 255, 0.8) !important;
+}

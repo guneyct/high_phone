@@ -1,0 +1,635 @@
+.settings {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 33, 71);
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+/* --------------- */
+/* HEADER DIZAINAS */
+/* --------------- */
+.settings > .header {
+    position: absolute;
+    width: 95%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(49, 167, 223, 0.1), rgba(49, 167, 223, 0.15));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    z-index: 99;
+}
+
+.settings > .header > .left {
+    display: flex;
+    position: absolute;
+    top: 53%;
+    left: 8%;
+}
+
+.settings > .header > .left > .icon {
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.settings > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+    margin-top: -1px;
+
+    font-family: PoppinsBolder;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+
+    transition: color 0.2s;
+}
+
+.settings > .header > .left > .title::before {
+    content: var(--new-text);
+    position: absolute;
+    color: transparent;
+
+    transition: color 0.2s;
+}
+
+.settings > .header > .left > .title.transition {
+    color: transparent;
+}
+
+.settings > .header > .left > .title.transition::before {
+    color: white;
+}
+
+.settings > .header > .right {
+    display: flex;
+    position: absolute;
+    top: 56.5%;
+    right: 8%;
+}
+
+.settings > .header > .right .icon {
+    display: block;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.75);
+    margin-left: 0.5vw;
+    transition: 0.1s;
+}
+
+.settings > .header > .right .icon:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* ----------------- */
+/* SETTINGS DIZAINAS */
+/* ----------------- */
+.settings > .main {
+    position: absolute;
+    width: 96%;
+    height: 76%;
+    top: 22%;
+    left: 0%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.35s;
+}
+
+.settings > .main::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.settings > .main::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+}
+
+.settings .player {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    margin-right: 0.5vw;
+    width: 88%;
+    height: 4vw;
+    background: rgba(24, 55, 109, 0.31);
+    border-radius: 1vw;
+}
+
+.settings .player > .avatar {
+    position: relative;
+    margin-left: 0.7vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.2vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    line-height: 3vw;
+    object-fit: cover;
+}
+
+.settings .player > .data {
+    position: relative;
+    margin-left: 0.65vw;
+}
+
+.settings .player > .data > .name {
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    margin-bottom: 0.1vw;
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+    color: white;
+}
+
+.settings .player > .data > .number  {
+    margin: 0;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.589);
+    letter-spacing: 0.03vw;
+    user-select: text;
+}
+
+.settings .settingslist {
+    position: absolute;
+    margin-top: 0.8vw;
+    width: 100%;
+    padding-bottom: 1vw;
+}
+
+.settings .settingslist .setting {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 1.9vw;
+    background-color: rgba(24, 55, 109, 0.3);
+    overflow: hidden;
+    transition: 0.1s background-color;
+}
+
+.settings .settingslist .setting.clickable:hover {
+    background-color: rgba(24, 55, 109, 0.6);
+    cursor: pointer;
+}
+
+.settings .settingslist .category {
+    border-radius: 0.6vw;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-right: 0.5vw;
+    width: 88%;
+}
+
+.settings .settingslist .setting:nth-child(even) {
+    background-color: rgba(24, 55, 109, 0.2);
+}
+
+.settings .settingslist .setting > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    margin-left: 0.5vw;
+    margin-right: 0.4vw;
+
+    border-radius: 0.2vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: rgb(0, 0, 0);
+
+    color: white;
+    font-size: 0.6vw;
+}
+
+.settings .settingslist .setting > .label {
+    position: relative;
+    margin-left: 0.4vw;
+    margin: 0;
+    line-height: 2vw;
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+}
+
+.settings .settingslist .setting > .button {
+    position: relative;
+    margin-left: auto;
+    margin-right: 0.5vw;
+
+    border-radius: 0.2vw;
+}
+
+.settings .settingslist .setting > .button > * {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.6vw;
+    margin: 0;
+}
+
+/* ------------------- */
+/* BACKGROUND DIZAINAS */
+/* ------------------- */
+.settings > .backgrounds {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    top: 22%;
+    right: -100%;
+
+    transition: 0.35s;
+}
+
+.settings > .backgrounds > label {
+    display: block;
+    margin-left: 2vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.settings > .backgrounds > .input {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.4vw;
+
+    width: 85%;
+    height: 2.4vw;
+}
+
+.settings > .backgrounds > .input > input {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    padding-right: 2vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background: rgba(24, 55, 109, 0.31);
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+}
+
+.settings > .backgrounds > .input::after {
+    content: "";
+    
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 0.1vw;
+    height: 1.2vw;
+
+    background-color: #18A8F9;
+    box-shadow: 0 0 0.5vw 0.1vw #18A8F9;
+}
+
+.settings > .backgrounds > .input > input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.settings > .backgrounds > .input > .url-check {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+
+    font-size: 0.7vw;
+    font-family: Poppins;
+    color: #18A8F9;
+}
+
+.settings > .backgrounds > .backgroundlist {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: left;
+
+    position: relative;
+    width: 85%;
+    height: 15.5vw;
+
+    padding: 0.4vw 0.1vw;
+    margin: 0 auto;
+    border-radius: 0.5vw;
+    
+    background: rgba(24, 55, 109, 0.31);
+
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.settings > .backgrounds > .backgroundlist::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.settings > .backgrounds > .backgroundlist::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+}
+
+.settings > .backgrounds > .backgroundlist > .bg {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    height: 6vw;
+    
+    flex: 0 1 29%;
+
+    margin: 0 0.25vw 0.4vw;
+    border-radius: 0.3vw;
+    
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.settings > .backgrounds > .backgroundlist > .bg > img {
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    transition: 0.2s box-shadow;
+}
+
+.settings > .backgrounds > .backgroundlist > .bg > img:nth-child(2) {
+    -webkit-mask-image: linear-gradient(to right, black 50%, transparent 50%);
+}
+
+.settings > .backgrounds > .backgroundlist > .bg > .icon {
+    position: absolute;
+    bottom: 8%;
+
+    font-size: 0.6vw;
+    color: white;
+}
+
+.settings > .backgrounds > .backgroundlist > .bg:hover {
+    cursor: pointer;
+}
+
+.settings > .backgrounds > .backgroundlist > .bg.active {
+    box-shadow: 0 0 0 0.1vw #18A8F9;
+}
+
+/* ------------------ */
+/* RINGTONES DIZAINAS */
+/* ------------------ */
+.settings > .ringtones {
+    position: absolute;
+    width: 90%;
+    height: 75%;
+    top: 22%;
+    right: -100%;
+    margin-right: 0.7vw;
+    transition: 0.35s;
+    overflow: auto;
+}
+
+.settings > .ringtones::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.settings > .ringtones::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+}
+
+
+.settings > .ringtones > .ringtone {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 95%;
+    height: 3.3vw;
+    margin: 0 auto;
+    margin-bottom: 0.5vw;
+    background: linear-gradient(to right, rgba(24, 55, 109, 0.31), rgba(24, 55, 109, 0.2));
+    border-radius: 0.5vw;
+}
+
+.settings > .ringtones > .ringtone > .play-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    width: 1.7vw;
+    height: 2vw;
+
+    margin-left: 1vw;
+
+    background: linear-gradient(to bottom right, #17A6F8, #4E8AFF);
+}
+
+.settings > .ringtones > .ringtone > .play-pause::before {
+    content: "";
+
+    display: block;
+    position: absolute;
+
+    left: -17%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1.7vw;
+
+    background-color: #1154B8;
+    z-index: -1;
+}
+
+.settings > .ringtones > .ringtone > .play-pause > * {
+    color: white;
+    font-size: 0.7vw;
+    transition: 0.1s color;
+}
+
+.settings > .ringtones > .ringtone > .play-pause:hover {
+    cursor: pointer;
+}
+
+.settings > .ringtones > .ringtone > .play-pause:hover > * {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.settings > .ringtones > .ringtone > .info {
+    width: 7vw;
+    margin-left: 0.7vw;
+}
+
+.settings > .ringtones > .ringtone > .info > * {
+    margin: 0;
+    white-space: nowrap;
+
+    line-height: 0.8vw;
+    padding-right: 0.5vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.settings > .ringtones > .ringtone > .info > .title {
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.6vw;
+}
+
+.settings > .ringtones > .ringtone > .info > .description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.settings > .ringtones > .ringtone > .length {
+    position: absolute;
+    right: 5%;
+
+    width: 1.2vw;
+
+    color: rgba(255, 255, 255, 0.5);
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+    pointer-events: none;
+    text-align: center;
+    
+    transition: 0.1s opacity;
+}
+
+.settings > .ringtones > .ringtone:hover > .length {
+    opacity: 0.0;
+}
+
+.settings > .ringtones > .ringtone > .download {
+    position: absolute;
+    right: 5%;
+
+    width: 1.2vw;
+    height: 1.2vw;
+
+    border-radius: 5vw;
+    border: 0.1vw solid rgba(255, 255, 255, 0.6);
+    
+    opacity: 0.0;
+    transition: 0.1s opacity;
+}
+
+.settings > .ringtones > .ringtone:hover > .download {
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+.settings > .ringtones > .ringtone > .download > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 0.8vw;
+    color: white;
+}
+
+.settings > .ringtones > .ringtone > .progress {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.settings > .ringtones > .ringtone > .progress > div {
+    position: absolute;
+    left: 0%;
+    height: 100%;
+
+    background: linear-gradient(to right, #18A8F9, #0B51D9);
+    background-size: 12vw;
+}
+
+/* -------------- */
+/* INPUT DIZAINAS */
+/* -------------- */
+.settings .settingslist .setting > .input-label {
+    position: absolute;
+    left: 16.5%;
+    top: 13%;
+    height: fit-content;
+    width: max-content;
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: white;
+}
+
+.settings .settingslist .setting > input[type="text"] {
+    position: relative;
+    top: 33%;
+    left: 8%;
+    height: 1.5vw;
+    width: 80.5%;
+    padding-right: 1.5vw;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+    box-sizing: border-box;
+}
+
+.settings .settingslist .setting > input[type="text"]::placeholder {
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.1s;
+}
+
+.settings .settingslist .setting > input[type="text"]:focus::placeholder {
+    color: rgba(255, 255, 255, 0.0);
+}
+
+.settings .settingslist .setting > .url-check {
+    position: relative;
+    top: 43%;
+    left: 3%;
+    font-size: 0.7vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.5);
+}

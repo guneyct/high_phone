@@ -1,0 +1,199 @@
+.gallery {
+    display: none;
+    position: absolute;
+    top: 0%;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.gallery > .images {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 88%;
+    z-index: 9999;
+    transition: 0.25s;
+    overflow: hidden;
+}
+
+.gallery > .images > .content {
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0%);
+    transition: 0.25s;
+}
+
+.gallery > .images > .no-images {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.671);
+    font-family: Poppins;
+}
+
+.gallery > .images > .content > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.5s;
+}
+
+.gallery > .upper > * {
+    z-index: 99999;
+}
+
+.gallery > .upper > .header {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 14%;
+    backdrop-filter: blur(0.5vw);
+    background-color: rgba(43, 43, 43, 0.63);
+}
+
+.gallery > .upper > .header > .airdrop-image {
+    position: absolute;
+    top: 60%;
+    right: 8%;
+
+    color: white;
+    font-size: 0.75vw;
+    
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.gallery > .upper > .header > .airdrop-image:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gallery > .upper > .header > .photo-delete {
+    position: absolute;
+    top: 60%;
+    left: 8%;
+
+    font-size: 0.8vw;
+    color: white;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.gallery > .upper > .header > .photo-delete:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gallery > .upper > .header > .date {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.7vw;
+    color: white;
+    font-family: PoppinsMedium;
+    text-align: center;
+}
+
+.gallery > .upper > .header > .date > * {
+    margin: 0;
+}
+
+.gallery > .upper > .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    bottom: 4%;
+    width: 100%;
+    height: 12%;
+}
+
+.gallery > .upper > .controls > .imagenumber {
+    position: absolute;
+    top: -30%;
+    color: rgba(255, 255, 255, 0.808);
+    font-size: 0.6vw;
+    font-family: PoppinsRegular;
+}
+
+.gallery > .upper > .controls > .center {
+    width: 70%;
+    height: 2.2vw;
+    margin: 0;
+    backdrop-filter: blur(0.5vw);
+    border-radius: 0.5vw;
+}
+
+.gallery > .upper > .controls > .center > .imagelink {
+    display: block;
+    margin: 0 auto;
+
+    color: white;
+    font-family: Poppins;
+    text-align: center;
+    line-height: 2.2vw;
+    font-size: 0.6vw;
+
+    width: 90%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: text;
+}
+
+.gallery > .upper > .controls > .center > .imagelink:hover {
+    cursor: pointer;
+}
+
+/*.gallery > .upper > .controls > .imagelink > .icon {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+
+    font-size: 0.8vw;
+    color: rgb(255, 255, 255);
+    transition: 0.05s;
+}*/
+
+.gallery > .upper > .controls > .back, .next {
+    position: absolute;
+
+    font-size: 0.9vw;
+    color: white;
+    transition: color 0.05s;
+}
+
+.gallery > .upper > .controls > .back:hover, .next:hover {
+    color: rgba(255, 255, 255, 0.705);
+    cursor: pointer;
+}
+
+.gallery > .upper > .controls > .back {
+    right: 7%;
+}
+
+.gallery > .upper > .controls > .next {
+    left: 7%;
+}

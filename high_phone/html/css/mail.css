@@ -1,0 +1,2290 @@
+.mail {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url("../media/adsmail.png");
+    background-color: #2a4164;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.dark-mode .mail {
+    background-color: #252a38;
+}
+
+.mail > .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to top right, transparent 50%, #4fa1ff2a 100%);
+}
+
+.mail > .welcome .icon {
+    color: white;
+    font-size: 2vw;
+}
+
+.mail > .welcome > .title,
+.mail > .welcome > .description {
+    margin: 0;
+
+    max-width: 10vw;
+    text-align: center;
+}
+
+.mail > .welcome .title {
+    margin-top: 0.7vw;
+
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.85vw;
+}
+
+.mail > .welcome .description {
+    margin-top: 0.4vw;
+
+    color: rgba(255, 255, 255, 0.55);
+    font-family: Poppins;
+    font-size: 0.6vw;
+}
+
+.mail > .welcome .inputs {
+    position: relative;
+    margin: 1vw auto 0;
+
+    width: 83%;
+}
+
+.mail > .welcome .inputs label.input {
+    display: block;
+    margin-left: 0.8vw;
+
+    line-height: 1.1vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .mail > .welcome .inputs label.input {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mail > .welcome .inputs input {
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2vw;
+    font-size: 0.55vw;
+    padding-left: 0.8vw;
+    outline: 0;
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+
+    background: linear-gradient(to top right, rgb(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border-radius: 2vw;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
+.mail > .welcome .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.55vw;
+}
+
+.mail > .welcome .inputs .email {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 0.6vw;
+}
+
+.mail > .welcome .inputs .email > input {
+    margin-bottom: 0;
+    padding-right: 4.7vw;
+}
+
+.mail > .welcome .inputs .emailformat {
+    position: absolute;
+    margin: 0;
+    right: 5%;
+
+    color: #fff;
+    font-size: 0.55vw;
+    font-family: 'PoppinsRegular';
+    opacity: 0.35;
+}
+
+.mail > .welcome .inputs button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    width: 90%;
+    height: 1.8vw;
+
+    outline: 0;
+    border: 0;
+    border-radius: 2vw;
+    
+    font-family: PoppinsMedium;
+    font-size: 0.55vw;
+    transition: background 0.1s, color 0.2s;
+}
+
+.mail > .welcome .inputs button::before {
+    content: var(--new-text);
+    position: absolute;
+    
+    color: transparent;
+    transition: color 0.2s;
+}
+
+.mail > .welcome .inputs button.transition {
+    color: transparent;
+}
+
+.mail > .welcome .inputs button.transition::before {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mail > .welcome > .inputs .fill {
+    box-shadow: 0 0 0.5vw 0 #4fa1ff9f;
+    background: #4FA0FF;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mail > .welcome > .inputs .fill:hover {
+    background: #428de2;
+}
+
+.mail > .welcome > .inputs .nofill {
+    box-shadow: 0 0 0.5vw 0 #4fa1ff2c, inset 0 0 0.5vw 0 #4fa1ff2c;
+    background: transparent;
+    border: solid 0.1vw #4fa1ff69;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: PoppinsRegular;
+
+    width: 80%;
+}
+
+.mail > .welcome > .inputs .nofill:hover {
+    background: #4fa1ff2c;
+}
+
+.mail > .welcome > .inputs .name {    
+    margin-bottom: 0;
+    height: 0;
+    opacity: 0.0;
+
+    overflow: hidden;
+    transition: margin 0.25s, height 0.25s, opacity 0.5s;
+}
+
+.mail > .welcome.closing-register > .inputs .name {
+    transition: margin 0.5s, height 0.5s, opacity 0.25s;
+}
+
+.mail > .welcome.register > .inputs .name {
+    display: block;
+
+    opacity: 1.0;
+    margin-bottom: 0.4vw;
+    height: 3.1vw;
+}
+
+.mail > .welcome .hr {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    width: calc(80% + 0.6vw);
+
+    margin: 0.4vw auto;
+
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: PoppinsMedium;
+    font-size: 0.45vw;
+    box-sizing: border-box;
+}
+
+.mail > .welcome .hr:before,
+.mail > .welcome .hr:after {
+    content: "";
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+    margin: 0.3vw;
+}
+
+/* ------------- */
+/* MAIN DIZAINAS */
+/* ------------- */
+.mail > .header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 1.6vw;
+    padding: 0.1vw;
+    margin: 0 1vw;
+    margin-top: 2.5vw;
+    box-sizing: border-box;
+    
+    transition: transform 0.4s ease-in-out;
+}
+
+.mail > .header.hidden {
+    transform: translate3d(0, -5vw, 0);
+}
+
+.mail > .header > #openmailcategories {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    height: 100%;
+}
+
+.mail > .header .bars,
+.mail > .header .bars::before,
+.mail > .header .bars::after {
+    position: relative;
+
+    width: 0.7vw;
+    height: 0.1vw;
+    background: white;
+    border-radius: 0.5vw;
+    
+    margin-right: 0.8vw;
+    
+    transition: transform 0.5s, background 0.5s;
+    transform-origin: center;
+}
+
+.mail > .header .bars::before,
+.mail > .header .bars::after {
+    content: "";
+    position: absolute;
+
+    width: 125%;
+}
+
+.mail > .header .bars::before {
+    transform: translateY(-0.3vw);
+}
+
+.mail > .header .bars::after {
+    transform: translateY(0.3vw);
+}
+
+.mail > .header.categories-open .bars {
+    background: transparent;
+}
+
+.mail > .header.categories-open .bars::before {
+    transform: rotate(45deg);
+}
+
+.mail > .header.categories-open .bars::after {
+    transform: rotate(-45deg);
+}
+
+.mail > .header .title {
+    margin: 0 0;
+
+    font-family: PoppinsMedium;
+    font-size: 0.7vw;
+    color: white;
+
+    line-height: 1.6vw;
+
+    transition: left 0.6s, top 0.6s, font-size 0.6s, color 0.6s, opacity 0.5s;
+}
+
+.mail > .header > .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+}
+
+.mail > .header .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 1.1vw;
+    height: 1.1vw;
+
+    border-radius: 2vw;
+    color: white;
+    font-size: 0.7vw;
+
+    cursor: pointer;
+    transition: opacity 0.3s, background 0.3s;
+    opacity: 0.8;
+}
+
+.mail > .header .search:hover {
+    opacity: 1.0;
+}
+
+.mail > .header.search .search {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mail > .header.search .search:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mail > .header .search > * {
+    position: absolute;
+    transition: color 0.15s;
+}
+
+.mail > .header .search > .searchicon {
+    color: white;
+}
+
+.mail > .header .search > .closeicon {
+    color: transparent;
+}
+
+.mail > .header.search .search > .searchicon {
+    color: transparent;
+}
+
+.mail > .header.search .search > .closeicon {
+    color: white;
+}
+
+.mail > .header > .searchinput {
+    position: absolute;
+    padding-right: inherit;
+    right: 0%;
+    width: 1.4vw;
+    height: 1.7vw;
+    border-radius: 2vw;
+    overflow: hidden;
+    
+    transition: all 0.4s ease-in-out;
+}
+
+.mail > .header.search > .searchinput {
+    width: 12.4vw;
+}
+
+.mail > .header.search > .searchinput > input {
+    width: 100%;
+    padding: 0 3.2vw 0 1vw;
+    color: white;
+}
+
+.mail > .header.search > .searchinput > input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .header > .searchinput > input {
+    display: block;
+    position: absolute;
+    right: 0;
+    
+    height: 100%;
+    width: 0;
+
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+
+    font-size: 0.55vw;
+
+    font-family: Poppins;
+    color: transparent;
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    transition: all 0.4s ease-in-out;
+}
+
+.mail > .header > .searchinput > input::placeholder {
+    color: transparent;
+    transition: color 0.4s;
+}
+
+.mail > .header .avatar {
+    position: relative;
+    margin-left: 0.3vw;
+
+    width: 1.4vw;
+    height: 1.4vw;
+
+    text-align: center;
+
+    z-index: 9999;
+}
+
+.mail > .header .avatar > p {
+    margin: 0;
+
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: solid 1px rgba(255, 255, 255, 0.4);
+
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+    line-height: 1.4vw;
+
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.mail > .header .avatar > p:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.mail > .header .avatar > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2vw;
+    object-fit: cover;
+
+    background-color: rgb(80, 80, 80);
+    border: solid 1px rgba(255, 255, 255, 0.4);
+
+    cursor: pointer;
+}
+
+.mail > .header .avatar .container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.4vw;
+
+    width: 0;
+    height: 0;
+
+    max-width: 11vw;
+
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2vw;
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0.1vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+
+    transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.dark-mode .mail > .header .avatar .container {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.mail > .header .avatar .container .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 1.5vw;
+    width: fit-content;
+    margin-top: 0.3vw;
+    margin-right: 2.1vw;
+    margin-left: auto;
+}
+
+.mail > .header .avatar .container .info p {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.5vw;
+    color: white;
+    text-align: right;
+    line-height: 120%;
+}
+
+.mail > .header .avatar .container .info .address {
+    font-size: 0.45vw;
+    color: rgba(255, 255, 255, 0.5);
+        
+    cursor: pointer;
+}
+
+.mail > .header .avatar .container > hr { 
+    display: block; 
+    height: 1px;
+
+    border: 0; 
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent) 1;
+
+    margin: 0.3vw 0 0; 
+}
+
+.mail > .header .avatar .container > .button {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    min-width: max-content;
+    height: 1.5vw;
+    margin: 0.2vw 0.2vw 0;
+
+    padding-right: 1vw;
+
+    color: white;
+    border-radius: 0.3vw;
+    white-space: nowrap;
+
+    transition: background-color 0.1s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.mail > .header .avatar .container > .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.mail > .header .avatar .container > .button > .icon {
+    flex-shrink: 0;
+    flex-basis: 1.4vw;
+
+    font-size: 0.6vw;
+    transition: color 0.1s;
+    pointer-events: none;
+}
+
+.mail > .header .avatar .container > .button > .title {
+    flex-basis: 80%;
+
+    font-size: 0.55vw;
+    font-family: PoppinsRegular;
+    line-height: 1.9vw;
+    text-align: left;
+    
+    transition: color 0.1s;
+    pointer-events: none;
+}
+
+.mail > .header .avatar.open .container {
+    margin: -0.3vw -0.3vw 0 0;
+    border-radius: 0.3vw 1vw 0.3vw 0.3vw;
+    width: var(--width);
+    height: 7.6vw;
+}
+
+/* ----------- */
+/* MAIL DESIGN */
+/* ----------- */
+.dark-mode .mail > .mainbox::after,
+.dark-mode .mail > .mailbox,
+.dark-mode .mail > .newmailscreen {
+    background-color: #1B2637;
+}
+
+.dark-mode .mail > .mainbox::before {
+    background: rgba(20, 24, 38, 0.55);
+}
+
+.mail > .mainbox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translate3d(0, 0, 0);
+
+    width: 97%;
+    height: 82.5%;
+    border-radius: 1.8vw 1.8vw 0 0;
+    
+    transition: 0.4s ease-in-out;
+}
+
+.mail > .mainbox.hidden {
+    transform: translate3d(0, 100%, 0);
+}
+
+.mail > .mainbox.closed {
+    transform: translate3d(0, 87%, 0);
+}
+
+.mail > .mainbox::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 1.8vw 1.8vw 0 0;
+    z-index: -2;
+    transition: 0.5s ease-in-out;
+}
+
+.mail > .mainbox::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: white;
+    border-radius: 1.8vw 1.8vw 0 0;
+    z-index: -1;
+}
+
+.mail > .mainbox #mailcontent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    padding-top: 0.5vw;
+
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.mail > .mainbox .conversation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 3.4vw;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: height 0.3s ease-in-out, opacity 0.1s, background 0.05s;
+    overflow: hidden;
+}
+
+.mail > .mainbox .conversation:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mail > .mainbox .conversation:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mail > .mainbox .conversation::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 88%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.dark-mode .mail > .mainbox .conversation::before {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mail > .mainbox .conversation .inner {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mail > .mainbox .conversation .amount {
+    position: absolute;
+    left: 0.3vw;
+
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .mail > .mainbox .conversation .amount {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.mail > .mainbox .conversation .unread {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: -0.6vw;
+    margin-left: 0.9vw;
+
+    width: 0.3vw;
+    height: 0.3vw;
+    border-radius: 100%;
+
+    background: #FFB340;
+}
+
+.mail > .mainbox .conversation .unread::before {
+    content: "";
+    position: absolute;
+    width: 0.5vw;
+    height: 0.5vw;
+    border-radius: 100%;
+
+    background: #ffb34059;
+}
+
+.mail > .mainbox .conversation .avatar {
+    flex-shrink: 0;
+
+    width: 2.3vw;
+    height: 2.3vw;
+
+    margin-right: 0.4vw;
+    margin-left: 0.9vw;
+
+    border-radius: 2vw;
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    font-family: Poppins;
+    font-size: 0.9vw;
+    color: black;
+    line-height: 2.3vw;
+
+    object-fit: cover;
+}
+
+.dark-mode .mail > .mainbox .conversation .avatar {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.mail > .mainbox .conversation .details {
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-width: 0;
+
+    padding-right: 0.4vw;
+
+    width: 6.5vw;
+    box-sizing: border-box;
+}
+
+.mail > .mainbox .conversation .details * {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.55vw;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 0.7vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mail > .mainbox .conversation .details .name {
+    color: black;
+    
+    font-family: PoppinsMedium;
+    font-size: 0.6vw;
+}
+
+.mail > .mainbox .conversation .details .subject {
+    color: black;
+}
+
+.dark-mode .mail > .mainbox .conversation .details * {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .mail > .mainbox .conversation .details .name,
+.dark-mode .mail > .mainbox .conversation .details .subject {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mail > .mainbox .conversation .info {
+    flex-shrink: 0;
+
+    margin-left: auto;
+    margin-right: 0.9vw;
+
+    text-align: right;
+}
+
+.mail > .mainbox .conversation .info p {
+    margin: 0;
+
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 0.8vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dark-mode .mail > .mainbox .conversation .info p {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .mainbox .conversation .info .star {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 0.65vw;
+    transition: 0.5s color;
+}
+
+.dark-mode .mail > .mainbox .conversation .info .star {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mail > .mainbox .conversation .info .star.active {
+    color: #FFB83B;
+}
+
+.mail > .mainbox .conversation .info .star * {
+    transition: 0.5s transform;
+}
+
+.mail > .mainbox .conversation .info .star .starred {
+    position: absolute;
+    left: 0;
+    
+    color: #FFB83B !important;
+    transform: scale(0.0);
+}
+
+.mail > .mainbox .conversation .info .star.active .starred {
+    transform: scale(1.0) !important;
+}
+
+.mail > .mainbox .conversation .delete {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 0;
+
+    background: #FF5E5E;
+    color: white;
+    font-size: 0.6vw;
+
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+.mail > .mainbox .conversation .delete.faster {
+    transition: width 0.25s;
+}
+
+.mail > .mainbox .conversation .delete > * {
+    pointer-events: none;
+}
+
+.mail > .mainbox .conversation .delete > .title {
+    margin: 0;
+    margin-left: 0.3vw;
+    
+    color: white;
+    font-family: Poppins;
+    font-size: 0.55vw;
+}
+
+.mail > .mainbox .noresults {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mail > .mainbox .noresults > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.2vw;
+
+    width: 10vw;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail > .mainbox .noresults > .title { 
+    color: black;
+    font-family: PoppinsMedium;
+    font-size: 0.9vw;
+}
+
+.mail > .mainbox .noresults > .description {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.newmail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 11%;
+    right: 9%;
+
+    width: 2.3vw;
+    height: 2.3vw;
+    background-color: #FFB83B;
+
+    box-shadow: 0.1vw 0.2vw 0.7vw 0 #ffb73ba6;
+
+    color: white;
+    font-size: 1.1vw;
+
+    border-radius: 5vw;
+
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.newmail:hover {
+    background-color: #ffcc40;
+}
+
+/* ----------------- */
+/* CATEGORIES DESIGN */
+/* ----------------- */
+.mail > .mainbox.categories-open {
+    height: 84.5%;
+    transform: translateX(50%);
+}
+
+.mail > .mainbox.categories-open::before {
+    top: 5%;
+    left: -3%;
+
+    border-radius: 0.8vw 1.8vw 0 0;
+}
+
+.mail > .categories {
+    position: absolute;
+    top: 20%;
+    left: -15%;
+    width: 0;
+
+    opacity: 0.0;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+.mail > .categories.categories-open {
+    left: 0%;
+    width: 10vw;
+
+    opacity: 1.0;
+}
+
+.mail > .categories > .button {
+    display: flex;
+    align-items: center;
+
+    margin-left: 0.2vw;
+    padding: 0 0.7vw;
+
+    border-left: solid 0vw var(--active-color);
+    background: linear-gradient(to right, var(--active-color), transparent);
+    background-size: 280% 100%;
+    background-position: 200%;
+    background-repeat: no-repeat;
+
+    width: 6vw;
+    height: 1.6vw;
+
+    transition: background-position 0.3s, color 0.15s, border 0.15s;
+    cursor: pointer;
+}
+
+.mail > .categories > .button > .icon {
+    margin-right: 0.5vw;
+
+    color: white;
+    font-size: 0.7vw;
+
+    width: 0.8vw;
+}
+
+.mail > .categories > .button > .title {
+    margin: 0;
+
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+    color: white;
+
+    line-height: 1.6vw;
+
+    transition: opacity 0.5s;
+}
+
+.mail > .categories > .button > .notifications {
+    min-width: 0.3vw;
+    padding: 0 0.2vw;
+    
+    margin: 0 0.9vw;
+    margin-left: auto;
+
+    text-align: center;
+    font-size: 0.45vw;
+    font-family: PoppinsRegular;
+    color: var(--active-color) !important;
+
+    line-height: 0.7vw;
+    background: transparent;
+    border-radius: 3vw;
+
+    transition: 0.3s;
+}
+
+.mail > .categories > .button.active > .notifications {
+    background: var(--active-color);
+    color: white !important;
+}
+
+.mail > .categories > .button.active {
+    border-width: 0.25vw;
+    background-position: 100%;
+}
+
+.mail > .categories > .button.active > * {
+    color: var(--active-color);
+}
+
+/* ------------------------ */
+/* NEW MAIL SCREEN DIZAINAS */
+/* ------------------------ */
+.mail > .newmailscreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translate3d(0, 100%, 0);
+
+    width: 97%;
+    height: 82.5%;
+    background-color: white;
+    border-radius: 1.8vw 1.8vw 0 0;
+
+    transition: 0.4s ease-in-out;
+}
+
+.mail > .newmailscreen.open {
+    transform: translate3d(0, 0, 0);
+}
+
+.mail > .newmailscreen > .title {
+    position: relative;
+    max-width: 10.5vw;
+
+    margin: 1.2vw 0 0;
+    margin-left: 1.1vw;
+
+    color: black;
+    font-family: PoppinsBolder;
+    font-size: 0.8vw;
+
+    transition: 0.2s opacity;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail > .newmailscreen.reply > .title {
+    font-family: PoppinsMedium;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .mail > .newmailscreen > .title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .mail > .newmailscreen.reply > .title {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mail > .newmailscreen > .description {
+    position: relative;
+    margin: 0.2vw 0 0;
+    margin-left: 1.1vw;
+
+    width: 7vw;
+    height: 1vw;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+    transition: 0.2s opacity;
+}
+
+.dark-mode .mail > .newmailscreen > .description  {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mail > .newmailscreen > .close {
+    position: absolute;
+    top: 1.4vw;
+    right: 1.1vw;
+
+    font-size: 0.95vw;
+    color: rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.mail > .newmailscreen > .close:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .mail > .newmailscreen > .close {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .mail > .newmailscreen > .close:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mail > .newmailscreen > .inputs {
+    position: relative;
+    margin: 1vw auto 0;
+
+    width: 85%;
+}
+
+.mail > .newmailscreen > .inputs label.input {
+    display: block;
+    margin-left: 0.6vw;
+
+    line-height: 1.1vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .mail > .newmailscreen > .inputs label.input {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mail > .newmailscreen > .inputs input[type="text"] {
+    display: block;
+    margin-bottom: 0.4vw;
+    width: 100%;
+    height: 2vw;
+    font-size: 0.65vw;
+    padding-left: 0.7vw;
+    outline: 0;
+    border: 0;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(244, 244, 244);
+    border-radius: 2vw;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
+.mail > .newmailscreen > .inputs input[type="text"]:disabled {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mail > .newmailscreen .recipients {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0.4vw;
+    width: 100%;
+    padding-left: 0.7vw;
+    background-color: rgb(244, 244, 244);
+    border-radius: 2vw;
+    overflow-x: auto;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.dark-mode .mail > .newmailscreen .recipients {
+    background-color: rgb(61, 70, 85);
+}
+
+.mail > .newmailscreen .mailsearchresults {
+    position: absolute;
+    margin-top: -1.2vw;
+
+    width: 100%;
+    height: 0;
+    max-height: 10vw;
+
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(0.5vw);
+
+    border-radius: 0 0 0.5vw 0.5vw;
+
+    overflow: auto;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.dark-mode .mail > .newmailscreen .mailsearchresults {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.mail > .newmailscreen .mailsearchresults::-webkit-scrollbar {
+    width: 0.2vw;
+    background: transparent;
+}
+
+.mail > .newmailscreen .mailsearchresults::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 1vw 1vw rgb(0, 0, 0, 0.2);
+    border-bottom: solid 0.4vw transparent;
+}
+
+.dark-mode .mail > .newmailscreen .mailsearchresults::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 1vw 1vw rgb(255, 255, 255, 0.2);
+}
+
+.mail > .newmailscreen .mailsearchresults > .result {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    width: 93%;
+    height: 2vw;
+    margin: 0 auto 0.2vw;
+
+    border-radius: 0.5vw;
+
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.mail > .newmailscreen .mailsearchresults > .result:first-child {
+    margin-top: 1vw;
+}
+
+.mail > .newmailscreen .mailsearchresults > .result:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mail > .newmailscreen .mailsearchresults > .result .avatar {
+    width: 1.5vw;
+    height: 1.5vw;
+    object-fit: cover;
+
+    margin-right: 0.4vw;
+    margin-left: 0.7vw;
+
+    border-radius: 100%;
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+    line-height: 1.5vw;
+
+    object-fit: cover;
+}
+
+.dark-mode .mail > .newmailscreen .mailsearchresults > .result .avatar {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mail > .newmailscreen .mailsearchresults > .result p {
+    margin: 0;
+
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.55vw;
+    font-family: Poppins;
+    line-height: 130%;
+}
+
+.dark-mode .mail > .newmailscreen .mailsearchresults > .result p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.mail > .newmailscreen .mailsearchresults > .result .name {
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+}
+
+.mail > .newmailscreen .recipients::-webkit-scrollbar {
+    display: none;
+}
+
+.mail > .newmailscreen .recipients > input[type="text"] {
+    min-width: 7vw;
+    width: 100%;
+
+    margin-bottom: 0;
+    padding-left: 0;
+
+    background: transparent !important;
+}
+
+.mail > .newmailscreen .recipients .list {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 0.5vw;
+    
+    overflow: auto;
+}
+
+.mail > .newmailscreen .recipients .recipient {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+    max-width: 6vw;
+    height: 1.3vw;
+    border-radius: 0.5vw;
+    margin-right: 0.6vw;
+
+    background-color: rgba(0, 0, 0, 0.19);
+    transition: width 0.2s, opacity 0.1s;
+}
+
+.dark-mode .mail > .newmailscreen .recipients .recipient {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mail > .newmailscreen .recipients .recipient > img {
+    flex-shrink: 0;
+
+    width: 0.9vw;
+    height: 0.9vw;
+    margin-left: 0.2vw;
+    border-radius: 1vw;
+
+    object-fit: cover;
+} 
+
+.mail > .newmailscreen .recipients .recipient > .title {
+    color: black;
+
+    font-size: 0.45vw;
+    font-family: Poppins;
+
+    margin-left: 0.3vw;
+    margin-right: 0.8vw;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dark-mode .mail > .newmailscreen .recipients .recipient > .title{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mail > .newmailscreen .recipients .recipient > .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -0.3vw;
+
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #FFB83B;
+    border-radius: 1vw;
+
+    transition: transform 0.1s;
+}
+
+.mail > .newmailscreen .recipients .recipient > .delete:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.mail > .newmailscreen .recipients .recipient > .delete > * {
+    font-size: 0.6vw;
+    color: white;
+}
+
+.dark-mode .mail > .newmailscreen > .inputs input[type="text"],
+.dark-mode .mail > .newmailscreen > .inputs textarea {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .mail > .newmailscreen > .inputs input::placeholder,
+.dark-mode .mail > .newmailscreen > .inputs textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .newmailscreen > .inputs input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.mail > .newmailscreen > .inputs textarea {
+    display: block;
+    margin-bottom: 0.4vw;
+    width: 100%;
+
+    height: 9.5vw;
+    font-size: 0.65vw;
+    padding: 0;
+    padding-left: 0.7vw;
+    outline: 0;
+    border: solid transparent;
+    border-top-width: 0.5vw;
+    border-bottom-width: 2.4vw;
+
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: #F4F4F4;
+    border-radius: 1vw;
+
+    box-sizing: border-box;
+    overflow: scroll;
+    resize: none;
+}
+
+.mail > .newmailscreen > .inputs .content {
+    position: relative;
+}
+
+.mail > .newmailscreen > .inputs .content .footer {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 2.7vw;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    margin-left: 0.7vw;
+    padding: 0 0.3vw;
+
+    width: 57%;
+    height: 100%;
+    overflow-x: scroll;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments::-webkit-scrollbar {
+    display: none;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments > .attachment {    
+    flex-shrink: 0;
+    position: relative;
+    width: 1vw;
+    height: 1vw;
+
+    margin-right: 0.4vw;
+
+    cursor: pointer;
+    transition: width 0.2s, height 0.2s, margin 0.2s;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments > .attachment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35%;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments > .attachment .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: -0.3vw;
+    right: -0.3vw;
+
+    width: 0.7vw;
+    height: 0.7vw;
+    background-color: #FFB83B;
+    border-radius: 1vw;
+
+    font-size: 0.5vw;
+    color: white;
+
+    transition: transform 0.1s;
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attachments > .attachment:hover .delete {
+    transform: scale(1.1);
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .attach {
+    flex-shrink: 0;
+    margin-left: auto;
+
+    font-size: 0.8vw;
+    transform: rotate(-135deg);
+    color: rgba(0, 0, 0, 0.4);
+
+    cursor: pointer;
+}
+
+.dark-mode .mail > .newmailscreen > .inputs .content .footer > .attach {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mail > .newmailscreen > .inputs .content .footer > .send {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 0.6vw;
+    margin-right: 0.7vw;
+
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 100%;
+
+    font-size: 0.55vw;
+    color: white;
+
+    background: #ffb83b;
+    box-shadow: 0 0.2vw 0.5vw 0 #ffb73bc2;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.mail > .newmailscreen > .inputs .content .send:hover {
+    background: #ffcb1f;
+}
+
+.mail > .newmailscreen > .inputs textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.mail > .newmailscreen > .inputs button {
+    display: block;
+    margin-top: 0.5vw;
+    width: 100%;
+    height: 2.1vw;
+    border-radius: 0.4vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    outline: 0;
+    border: 0;
+    
+    padding: 0;
+    transition: 0.1s;
+
+    background-color: #edce60;
+    box-shadow: 0 0 0.3vw #edce60, 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------- */
+/* MAIL BOX DIZAINAS */
+/* ----------------- */
+.mail > .mailbox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translate3d(0, 100%, 0);
+
+    width: 97%;
+    height: 82.5%;
+    background-color: white;
+    border-radius: 1.8vw 1.8vw 0 0;
+
+    transition: 0.4s ease-in-out;
+}
+
+.mail > .mailbox.open {
+    transform: translate3d(0, 0, 0);
+}
+
+.mail > .mailbox > .header {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    margin: 1.2vw 0.9vw 0;
+
+    padding: 0.1vw;
+}
+
+.mail > .mailbox > .header > #closemail {
+    margin-right: 0.6vw;
+
+    font-size: 0.8vw;
+    color: rgba(0, 0, 0, 0.4);
+
+    cursor: pointer;
+    transition: color 0.05s;
+}
+
+.mail > .mailbox > .header > #closemail:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .mail > .mailbox > .header > #closemail {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.dark-mode .mail > .mailbox > .header > #closemail:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mail > .mailbox > .header > .info {
+    flex-shrink: 1;
+    min-width: 0;
+
+    margin-right: 0.5vw;
+}
+
+.mail > .mailbox > .header > .info p {
+    margin: 0;
+    max-width: 8.5vw;
+
+    font-family: Poppins;
+    font-size: 0.55vw;
+    line-height: 0.9vw;
+    color: rgba(0, 0, 0, 0.8);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail > .mailbox > .header > .info .subject {
+    color: black;
+    font-size: 0.75vw;
+    font-family: PoppinsBolder;
+
+    user-select: text;
+}
+
+.dark-mode .mail > .mailbox > .header > .info .subject,
+.dark-mode .mail > .mailbox > .letterlist > .letter .info .name,
+.dark-mode .mail > .mailbox > .letterlist > .letter .content{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mail > .mailbox > .header > .buttons {
+    flex-shrink: 0;
+
+    display: flex;
+    margin-left: auto;
+}
+
+.mail > .mailbox > .header > .buttons > * {
+    margin-left: 0.3vw;
+
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 0.65vw;
+    
+    cursor: pointer;
+    transition: color 0.05s;
+}
+
+.mail > .mailbox > .header > .buttons > *:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.dark-mode .mail > .mailbox > .header > .buttons > * {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.dark-mode .mail > .mailbox > .header > .buttons > *:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mail > .mailbox > .header > .buttons .star {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.mail > .mailbox > .header > .buttons .star.active {
+    transition: 0.5s color;
+
+    color: #FFB83B;
+}
+
+.mail > .mailbox > .header > .buttons .star * {
+    transition: 0.5s transform;
+}
+
+.mail > .mailbox > .header > .buttons .star .starred {
+    position: absolute;
+    left: 0;
+    
+    color: #FFB83B !important;
+    transform: scale(0.0);
+}
+
+.mail > .mailbox > .header > .buttons .star.active .starred {
+    transform: scale(1.0) !important;
+}
+
+.mail > .mailbox hr,
+.mail > .mailbox > .letterlist hr { 
+    display: block; 
+    height: 1px;
+
+    border: 0; 
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    margin: 0.5vw 0.8vw 0.6vw; 
+}
+
+.dark-mode .mail > .mailbox hr,
+.dark-mode .mail > .mailbox > .letterlist hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mail > .mailbox > .letterlist {
+    position: relative;
+    height: 20vw;
+
+    margin: 0 0.3vw;
+    padding: 0 0.6vw;
+
+    overflow-y: scroll;
+}
+
+.mail > .mailbox > .letterlist hr { 
+    margin: 0.5vw -0.1vw; 
+}
+
+.mail > .mailbox > .letterlist::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.mail > .mailbox > .letterlist::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mail > .mailbox > .letterlist > .letter {
+    position: relative;
+    width: 100%;
+    
+    box-sizing: border-box;
+}
+
+.mail > .mailbox > .letterlist > .letter:last-child {
+    margin-bottom: 2vw;
+}
+
+.mail > .mailbox > .letterlist > .letter .header {
+    display: flex;
+    align-items: center;
+}
+
+.mail > .mailbox > .letterlist > .letter .avatar {
+    flex-shrink: 0;
+
+    text-align: center;
+    margin-right: 0.3vw;
+
+    background-color: rgba(0, 0, 0, 0.15);
+
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: black;
+    line-height: 1.4vw;
+
+    width: 1.4vw;
+    height: 1.4vw;
+    border-radius: 2vw;
+    object-fit: cover;
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .avatar {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mail > .mailbox > .letterlist > .letter .info {
+    position: relative;
+    max-width: 8.5vw;
+    
+    margin-right: 0.5vw;
+
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.mail > .mailbox > .letterlist > .letter .info p {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.5vw;
+    line-height: 0.7vw;
+    color: rgba(0, 0, 0, 0.8);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail > .mailbox > .letterlist > .letter .info .name {
+    color: black;
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .info p,
+.dark-mode .mail > .mailbox > .header > .info p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mail > .mailbox > .letterlist > .letter .right {
+    display: flex;
+    align-items: center;
+    
+    margin-left: auto;
+}
+
+.mail > .mailbox > .letterlist > .letter .reply {
+    margin-right: 0.3vw;
+
+    font-size: 0.5vw;
+    color: rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .reply {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.mail > .mailbox > .letterlist > .letter .reply:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .reply:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .mailbox > .letterlist > .letter .timestamp {
+    flex-shrink: 0;
+    margin: 0;
+
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+    line-height: 0.7vw;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .timestamp {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .mailbox > .letterlist > .letter .content {
+    margin: 0.5vw 0 0;
+
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: black;
+
+    user-select: text;
+}
+
+.mail > .mailbox > .letterlist > .letter button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 1.5vw;
+    width: fit-content;
+
+    margin: 0.5vw 0;
+    padding: 0 0.5vw;
+    padding-left: 1.5vw;
+
+    font-family: Poppins;
+    font-size: 0.5vw;
+    color: black;
+
+    outline: 0;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0.2vw;
+
+    transition: background 0.1s, margin 0.3s;
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter button {
+    color: rgba(255, 255, 255, 0.9);
+    border: solid 1px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mail > .mailbox > .letterlist > .letter button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mail > .mailbox > .letterlist > .letter button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mail > .mailbox > .letterlist > .letter button::before {
+    content: "";
+    position: absolute;
+    left: 0.5vw;
+
+    width: 0.6vw;
+    height: 0.6vw;
+    background: var(--accent-color);
+
+    border-radius: 100%;
+}
+
+.mail > .mailbox > .letterlist > .letter .attachment {
+    margin-top: 0.5vw;
+
+    max-height: 9vw;
+    max-width: 100%;
+    border-radius: 0.5vw;
+
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.mail > .mailbox > .letterlist > .letter .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 2.5vw;
+
+    margin-top: 0.3vw;
+
+    font-family: Poppins;
+    font-size: 0.55vw;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.mail > .mailbox > .letterlist > .letter .footer.twt {
+    background: #F4FCFF;
+}
+
+.dark-mode .mail > .mailbox > .letterlist > .letter .footer.twt {
+    background: #212c3e;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mail > .mailbox > .replytoall {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 12%;
+    right: 0.9vw;
+    
+    margin: 0;
+    outline: 0;
+    border: 0;
+    padding: 0.4vw 0.7vw;
+
+    background: #FFB83B;
+    box-shadow: 0 0.2vw 0.5vw 0 #ffb73bc0;
+
+    border-radius: 2vw;
+
+    opacity: 0.7;
+    transition: 0.15s;
+}
+
+.mail > .mailbox > .replytoall:hover {
+    transform: scale(1.05);
+    opacity: 1.0;
+}
+
+.mail > .mailbox > .replytoall p {
+    margin: 0;
+
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: white;
+}
+
+.mail > .mailbox > .replytoall .icon {
+    margin-right: 0.4vw;
+
+    font-size: 0.6vw;
+    color: white;
+}
+
+/* --------------------------- */
+/* EDIT ACCOUNT MODAL DIZAINAS */
+/* --------------------------- */
+.mail > .editProfile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -80%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 98%;
+
+    padding-bottom: 0.8vw;
+
+    transition: 0.35s bottom cubic-bezier(0.54, 1.35, 0.73, 0.98);
+}
+
+.mail > .editProfile > .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    
+    border-radius: 1.8vw 1.8vw 0 0;
+    backdrop-filter: blur(1vw);
+    z-index: -1;
+}
+
+.dark-mode .mail > .editProfile > .bg {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mail > .editProfile.open {
+    bottom: -3%;
+}
+
+.mail > .editProfile .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+    margin-bottom: 0.5vw;
+    width: 88%;
+}
+
+.mail > .editProfile .header > .avatar {
+    text-align: center;
+
+    margin: -1.6vw 0 0.5vw;
+
+    box-shadow: 0 -0.2vw 0.5vw 0 rgba(0, 0, 0, 0.2);
+
+    background-color: rgba(48, 48, 48, 0.3);
+    backdrop-filter: blur(0.2vw);
+
+    font-family: Poppins;
+    font-size: 0.9vw;
+    color: white;
+    line-height: 3.2vw;
+
+    width: 3.2vw;
+    height: 3.2vw;
+    border-radius: 2vw;
+    object-fit: cover;
+}
+
+.mail > .editProfile .header > .name,
+.mail > .editProfile .header > .address {
+    margin: 0;
+    text-align: center;
+}
+
+.mail > .editProfile .header > .name {
+    color: white;
+    font-size: 0.8vw;
+    font-family: PoppinsMedium;
+}
+
+.mail > .editProfile .header > .address {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.mail > .editProfile .close {
+    position: absolute;
+    top: 9%;
+    right: 13%;
+
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.5);
+    
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.mail > .editProfile .close:hover {
+    color: white;
+}
+
+.mail > .editProfile .inputs label {
+    display: block;
+    margin-left: 0.8vw;
+    line-height: 0.9vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.mail > .editProfile .inputs {
+    width: 80%;
+}
+
+.mail > .editProfile .inputs .flex {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.mail > .editProfile .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.1vw;
+
+    padding-left: 0.8vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.mail > .editProfile .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mail > .editProfile .inputs button {
+    display: block;
+    margin: 1.3vw auto 2.2vw;
+
+    width: 75%;
+    height: 1.7vw;
+
+    font-size: 0.55vw;
+    font-family: PoppinsRegular;
+    color: white;
+
+    background: #FFB83B;
+    box-shadow: 0 0 0.3vw 0 #FFB83B;
+
+    border-radius: 5vw;
+    outline: 0;
+    border: 0;
+    padding: 0;
+
+    transition: 0.1s;
+}
+
+.mail > .editProfile .inputs .image {
+    position: relative;
+    z-index: 1;
+}
+
+.mail > .editProfile .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #FFB83B;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.mail > .editProfile .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.mail > .editProfile .inputs .upload:hover {
+    background-color: #ffc868;
+    cursor: pointer;
+}
+
+.dark-mode .mail .bottomline > div {
+    background-color: white !important;
+}

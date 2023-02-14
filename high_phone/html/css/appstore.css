@@ -1,0 +1,661 @@
+.appstore {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.0;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 10%, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 1.0) 40%), url("../media/appstore.png");
+    background-color: #0D355A;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.dark-mode .appstore {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 15%, rgba(27, 38, 55, 0.5) 30%, rgba(27, 38, 55, 1.0) 45%), url("../media/appstore.png");
+    background-color: #3a6792;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.appstore > .header {
+    flex-wrap: wrap;
+    display: flex;
+    position: relative;
+
+    align-items: center;
+
+    width: 88%;
+
+    margin: 0 auto;
+    margin-top: 2.5vw;
+}
+
+.appstore > .header > .search {
+    flex-grow: 1;
+    height: 1.7vw;
+
+    padding-left: 2vw;
+    outline: 0;
+    border: 0;
+
+    margin-right: 0.4vw;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: PoppinsRegular;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+    box-sizing: border-box;
+}
+
+.dark-mode .appstore > .header > .search,
+.dark-mode .appstore > .header > .downloads {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.appstore > .header > .search::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    transition: 0.05s opacity;
+}
+
+.appstore > .header > .search:focus::placeholder {
+    opacity: 0.0;
+}
+
+.appstore > .header > .downloads {
+    position: relative;
+    width: 1.7vw;
+    height: 1.7vw;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+}
+
+.appstore > .header > .downloads > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 0.9vw;
+}
+
+.appstore > .header > .downloads > .downloadcount {
+    position: absolute;
+    top: -15%;
+    right: -15%;
+
+    min-width: 0.35vw;
+    width: 0;
+    padding: 0 0.25vw;
+
+    margin: 0;
+    
+    text-align: center;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 0.85vw;
+
+    background: linear-gradient(to bottom right, #81B3FF, #3787FF);
+    border-radius: 3vw;
+
+    overflow: hidden;
+    transition: 0.5s width;
+}
+
+.appstore > .header > .input-icon {
+    position: absolute;
+    left: 6.5%;
+
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7vw;
+}
+
+.appstore > .categories {
+    flex-wrap: nowrap;
+    display: flex;
+    position: relative;
+    
+    margin: 0 auto;
+    margin-top: 1vw;
+    padding: 0 1vw;
+
+    max-width: 80%;
+    width: fit-content;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.appstore > .categories:hover {
+    cursor: pointer;
+}
+
+.appstore > .categories::-webkit-scrollbar {
+    display: none;
+}
+
+.appstore > .categories > .category {
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+    line-height: 0.65vw;
+    margin: 0 0.5vw;
+
+    transition: color 0.1s, font-size 0.1s;
+}
+
+.appstore > .categories > .category.active {
+    font-size: 0.7vw;
+    font-family: PoppinsMedium;
+    color: rgba(255, 255, 255, 1);
+}
+
+.appstore > .mainbox {
+    position: relative;
+    margin-top: 3.8vw;
+
+    height: 80%;
+    width: 100%;
+}
+
+.appstore .featured {
+    position: relative;
+    margin: 0 auto;
+
+    width: 86%;
+    height: 3.7vw;
+
+    box-shadow: 0 -2.7vw 0 0.1vw rgba(255, 255, 255, 0.5);
+    background-color: white;
+    border-radius: 0.65vw;
+}
+
+.dark-mode .appstore .featured {
+    box-shadow: 0 -2.7vw 0 0.1vw rgba(0255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.appstore .featured > .header {
+    position: absolute;
+    top: -60%;
+    left: 7%;
+}
+
+.appstore .featured > .header > .title {
+    margin: 0;
+
+    color: black;
+    font-family: PoppinsBolder;
+    font-size: 0.65vw;
+}
+
+.appstore .featured > .header > .description {
+    margin: 0;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+}
+
+.dark-mode .appstore .featured > .header > .title,
+.dark-mode .appstore .featured > .application > .info > .title,
+.dark-mode .appstore .applications > .application > .info > .title,
+.dark-mode .appstore > .searchresults > .header > .left > .title,
+.dark-mode .appstore > .searchresults > .noresults > .title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .appstore .featured > .header > .description,
+.dark-mode .appstore > .searchresults > .header > .left > .description,
+.dark-mode .appstore > .searchresults > .noresults > .description {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .appstore .featured > .application > .info > .description,
+.dark-mode .appstore .applications > .application > .info > .description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.appstore .featured > .application {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    align-items: center;
+
+    width: 93%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 0.3vw;
+}
+
+.appstore .featured > .application > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    margin: 0 0.5vw 0 0.3vw;
+
+    width: 2.1vw;
+    height: 2.2vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.5vw;
+}
+
+.appstore .featured > .application > .icon > .icon {
+    font-size: 1.1vw;
+}
+
+.appstore .featured > .application > .info {
+    min-width: 0;
+}
+
+.appstore .featured > .application > .info > * {
+    margin: 0;
+    white-space: nowrap;
+
+    line-height: 0.65vw;
+    padding-right: 0.5vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appstore .featured > .application > .info > .title {
+    color: black;
+    font-family: PoppinsMedium;
+    font-size: 0.6vw;
+}
+
+.appstore .featured > .application > .info > .description {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+}
+
+.appstore .featured > .application > .button {
+    flex-shrink: 0;
+
+    margin: 0 0.5vw 0 auto;
+    height: 1vw;
+
+    color: #81b3ff;
+    font-size: 1vw;
+    transition: color 0.1s;
+}
+
+.appstore .featured > .application > .downloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    flex-shrink: 0;
+
+    margin: 0 0.5vw 0 auto;
+    height: 1.2vw;
+    width: 1.2vw;
+
+    color: #81b3ff;
+    font-size: 1vw;
+    transition: color 0.1s;
+}
+
+.appstore .featured > .application > .downloader:hover {
+    cursor: pointer;
+}
+
+.appstore .featured > .application > .downloader::after {
+    content: '';
+
+    width: 0.4vw;
+    height: 0.4vw;
+
+    border-radius: 0.1vw;
+    background-color: #2F6DCB;
+}
+
+.appstore .featured > .application > .downloader > canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.appstore .featured > .application > .button:hover {
+    cursor: pointer;
+    color: #397ee6;
+}
+
+.appstore .mainbox > .line {
+    margin: 0.4vw auto 0.9vw;
+
+    width: 86.5%;
+    height: 1px;
+    background-color: rgba(100, 110, 113, 0.17);
+}
+
+.appstore .mainbox .applications-wrapper {
+    padding-right: 1.3vw;
+}
+
+.appstore .mainbox .applications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    height: 15vw;
+
+    padding-left: 1.3vw;
+
+    overflow: auto;
+}
+
+.appstore .mainbox .applications::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.appstore .mainbox .applications::-webkit-scrollbar-thumb {
+    border-radius: 5vw;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.appstore .applications > .application {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+
+    align-items: center;
+
+    width: calc(82% + 1.3vw);
+    height: 2.2vw;
+    margin-bottom: .75vw;
+    transition: 0.25s margin, 0.3s height, 0.25s opacity;
+}
+
+.appstore .applications > .application:last-child {
+    margin-bottom: 2vw;
+}
+
+.appstore .applications > .application > .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    margin-right: 0.5vw;
+
+    width: 2.2vw;
+    height: 2.2vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.5vw;
+}
+
+.appstore .applications > .application > .icon > .icon {
+    font-size: 1.2vw;
+}
+
+.appstore .applications > .application > .info {
+    min-width: 0;
+}
+
+.appstore .applications > .application > .info > * {
+    margin: 0;
+    white-space: nowrap;
+
+    line-height: 0.65vw;
+    padding-right: 0.5vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appstore .applications > .application > .info > .title {
+    color: black;
+    font-family: PoppinsMedium;
+    font-size: 0.6vw;
+}
+
+.appstore .applications > .application > .info > .description {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+}
+
+.appstore .applications > .application > .button {
+    flex-shrink: 0;
+    
+    width: 0;
+    height: 0.9vw;
+
+    padding: 0 0.5vw;
+    margin: 0;
+    margin-left: auto;
+    
+    text-align: center;
+    font-size: 0.45vw;
+    font-family: PoppinsMedium;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.9vw;
+
+    background: linear-gradient(to right, #81B3FF 0%, #3787FF 50%, #81B3FF 100%);
+    background-size: 200% 100%;
+    border-radius: 3vw;
+
+    overflow: hidden;
+    transition: 0.5s width, 0.1s background-position;
+}
+
+.appstore .applications > .application > .button:hover {
+    cursor: pointer;
+    background-position: 100% 0%;
+}
+
+.appstore .applications > .application > .downloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    flex-shrink: 0;
+
+    margin-left: auto;
+    height: 1.2vw;
+    width: 1.2vw;
+
+    color: #81b3ff;
+    font-size: 1vw;
+    transition: color 0.1s;
+}
+
+.appstore .applications > .application > .downloader:hover {
+    cursor: pointer;
+}
+
+.appstore .applications > .application > .downloader::after {
+    content: '';
+
+    width: 0.4vw;
+    height: 0.4vw;
+
+    border-radius: 0.1vw;
+    background-color: #2F6DCB;
+}
+
+.appstore .applications > .application > .downloader > canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.appstore .applications > .application > .line {
+    position: absolute;
+    right: 0%;
+    bottom: -10%;
+
+    width: 80%;
+    height: 1px;
+
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .appstore .applications > .application > .line {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.appstore > .searchresults {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 97%;
+    height: 83%;
+
+    background-color: white;
+    border-radius: 1.8vw 1.8vw 0 0;
+    transition: 0.3s bottom cubic-bezier(0.54, 1.35, 0.73, 0.98);
+}
+
+.dark-mode .appstore > .searchresults {
+    background-color: #1B2637;
+}
+
+.appstore > .searchresults > .applications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    width: 95%;
+    height: 20.5vw;
+    margin: 0 auto;
+
+    overflow: auto;
+}
+
+.appstore > .searchresults > .applications .application {
+    width: 90%;
+}
+
+.appstore > .searchresults > .applications::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.appstore > .searchresults > .applications::-webkit-scrollbar-thumb {
+    border-radius: 5vw;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.appstore > .searchresults > .header {
+    margin: 1vw 1.1vw 0.5vw;
+    width: 85%;
+}
+
+.appstore > .searchresults > .line {
+    margin: 0.4vw auto 0.8vw;
+
+    width: 87%;
+    height: 1px;
+    background-color: rgba(100, 110, 113, 0.17);
+}
+
+.appstore > .searchresults > .header {
+    display: flex;
+    align-items: center;
+}
+
+.appstore > .searchresults > .header > .left > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1vw;
+
+    width: 10vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appstore > .searchresults > .header > .left > .title { 
+    color: black;
+    font-family: PoppinsBolder;
+    font-size: 0.8vw;
+}
+
+.appstore > .searchresults > .header > .left > .description {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.5vw;
+}
+
+.appstore > .searchresults > .header > #closeresults {
+    position: absolute;
+    right: 10%;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.appstore > .searchresults > .header > #closeresults:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .appstore > .searchresults > .header > #closeresults {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .appstore > .searchresults > .header > #closeresults:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.appstore > .searchresults > .noresults {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.appstore > .searchresults > .noresults > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.2vw;
+
+    width: 10vw;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appstore > .searchresults > .noresults > .title { 
+    color: black;
+    font-family: PoppinsBolder;
+    font-size: 1vw;
+}
+
+.appstore > .searchresults > .noresults > .description {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.dark-mode .appstore .bottomline > div {
+    background-color: white !important;
+}

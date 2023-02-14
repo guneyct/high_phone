@@ -1,0 +1,1577 @@
+.darkchat {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background: url("../media/darkchatbg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+.darkchat::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.25s;
+    opacity: 0.0;
+}
+
+.darkchat.darker::before {
+    background: radial-gradient(circle at bottom left, rgb(27, 0, 54), rgb(6, 6, 6));
+    opacity: 0.3;
+}
+
+.darkchat > .register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    transition: 0.35s;
+}
+
+.darkchat > .register.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.darkchat > .register .logo {
+    height: 5vw;
+    margin-top: 40%;
+
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.darkchat > .register > .title,
+.darkchat > .register > .description {
+    max-width: 10vw;
+    text-align: center;
+}
+
+.darkchat > .register .title {
+    margin: 0;
+    margin-top: 0.8vw;
+
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.8vw;
+}
+
+.darkchat > .register .description {
+    margin: 0;
+    margin-top: 0.5vw;
+
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.darkchat > .register .input {
+    display: flex;
+    gap: 0.4vw;
+
+    width: 83%;
+    height: 2vw;
+    
+    margin-top: 0.8vw;
+}
+
+.darkchat > .register .input input {
+    flex-grow: 1;
+
+    padding: 0 1vw;
+    outline: 0;
+    border: 0;
+
+    border-radius: 2vw;
+
+    background: rgba(110, 98, 255, 0.2);
+    color: white;
+    font-family: PoppinsRegular;
+    font-size: 0.55vw;
+
+    box-sizing: border-box;
+}
+
+.darkchat > .register .input input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.darkchat > .register .input button {
+    flex-shrink: 0;
+
+    width: 2vw;
+
+    padding: 0;
+    outline: 0;
+    border: 0;
+
+    border-radius: 2vw;
+    background: #7221DA;
+    box-shadow: 0 0 0.5vw 0 #7221DA;
+
+    font-size: 0.6vw;
+    color: white;
+}
+
+/* ------------- */
+/* MAIN DIZAINAS */
+/* ------------- */
+.darkchat > .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0%;
+    transform: translate3d(0, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    transition: 0.35s;
+}
+
+.darkchat > .main.hidden {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.darkchat > .main.hidden-alt {
+    transform: translate3d(100%, 0, 0);
+}
+
+.darkchat > .main .header {
+    display: flex;
+    align-items: center;
+
+    margin-top: 20%;
+
+    width: 85%;
+    height: 1.7vw;
+}
+
+.darkchat > .main .header .avatar {
+    flex-shrink: 0;
+
+    width: 1.6vw;
+    height: 1.6vw;
+    object-fit: cover;
+
+    margin-right: 0.4vw;
+
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.6vw;
+
+    object-fit: cover;
+}
+
+.darkchat > .main .header .nickname {
+    flex-shrink: 1;
+    min-width: 0;
+
+    margin-right: 0.5vw;
+
+    font-size: 0.55vw;
+    font-family: PoppinsRegular;
+    color: white;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.darkchat > .main .header .buttons {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.3vw;
+
+    margin-left: auto;
+
+    max-width: 7vw;
+}
+
+.darkchat > .main .header .buttons > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 1.4vw;
+
+    padding: 0 0.4vw;
+    outline: 0;
+    border: 0;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.45vw;
+    font-family: Poppins;
+    border-radius: 0.4vw;
+
+    transition: 0.1s;
+}
+
+.darkchat > .main .header .buttons > input {
+    width: 0vw;
+
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+
+.darkchat > .main .header .buttons > button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.darkchat > .main .header .buttons > button[data-action="editprofile"] {
+    width: 1.4vw;
+}
+
+.darkchat > .main .header .buttons > button[data-action="joingroup"] {
+    background-color: #7221DA;
+    box-shadow: 0 0 0.5vw 0 #7221DA;
+}
+
+.darkchat > .main .header .buttons > button[data-action="joingroup"]:hover {
+    background-color: #8a39f5;
+}
+
+.darkchat > .main > .title {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0.4vw 0;
+    padding: 0 0.6vw;
+
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: PoppinsMedium;
+    font-size: 0.45vw;
+    box-sizing: border-box;
+}
+
+.darkchat > .main > .title:before,
+.darkchat > .main > .title:after {
+    content: "";
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+    margin: 0.3vw;
+}
+
+.darkchat > .main .darkchat-loader {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.darkchat > .main .groups {
+    position: relative;
+    width: 90%;
+    height: 74%;
+
+    padding: 0 0.3vw;
+    overflow: auto;
+}
+
+.darkchat > .main .groups::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.darkchat > .main .groups::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 5vw;
+}
+
+.darkchat > .main .groups .group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    width: 100%;
+    height: 3.6vw;
+
+    margin-bottom: 0.5vw;
+
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.8vw;
+
+    transition: height 0.2s, opacity 0.1s, background-color 0.1s, margin 0.2s;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.darkchat > .main .groups .group.unread {
+    background: linear-gradient(to right, rgba(27, 0, 61, 0.2), rgba(114, 33, 218, 0.45));
+}
+
+.darkchat > .main .groups .group:hover {
+    background-color: rgba(81, 25, 155, 0.3);
+}
+
+.darkchat > .main .groups .group .cover {
+    flex-shrink: 0;
+
+    width: 2.6vw;
+    height: 2.6vw;
+    border-radius: 1.1vw;
+
+    margin-left: 0.8vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.9vw;
+    color: white;
+
+    text-align: center;
+    line-height: 2.6vw;
+
+    object-fit: cover;
+}
+
+.darkchat > .main .groups .group .info {
+    min-width: 0;
+    max-width: 6.5vw;
+
+    margin-left: 0.5vw;
+}
+
+.darkchat > .main .groups .group .info > p {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.65vw;
+    color: white;
+    line-height: 0.8vw;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.darkchat > .main .groups .group .info > .name {
+    font-family: PoppinsMedium;
+}
+
+.darkchat > .main .groups .group .info > .invite {
+    font-size: 0.6vw;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.darkchat > .main .groups .group .otherinfo {
+    margin-left: auto;
+    margin-right: 0.5vw;
+
+    height: 1.7vw;
+}
+
+.darkchat > .main .groups .group .otherinfo > * {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.5vw;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 0.85vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.darkchat > .main .groups .group .otherinfo > .notifications {
+    float: right;
+    width: 0.85vw;
+    margin: 0;
+    
+    text-align: center;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+
+    background: linear-gradient(to bottom right, #7221DA, #9421DA);
+    border-radius: 3vw;
+}
+
+.darkchat > .main .groups .group .otherinfo > .bell {
+    display: block;
+    float: right;
+    
+    margin: 0;
+    
+    text-align: center;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.darkchat > .main .newgroup {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 8%;
+
+    width: 2.2vw;
+    height: 2.2vw;
+}
+
+.darkchat > .main .newgroup .creategroup {
+    position: absolute;
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 5vw;
+    
+    outline: 0;
+    border: 0;
+
+    background: #7221DA;
+    box-shadow: 0.2vw 0.2vw 1vw 0 #7221DA;
+
+    font-size: 0.55vw;
+    font-family: PoppinsMedium;
+    color: transparent;
+
+    transition: width 0.2s, color 0.2s;
+    z-index: 2;
+}
+
+.darkchat > .main .newgroup .toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 5vw;
+    background: #7221DA;
+
+    color: white;
+    font-size: 1vw;
+
+    transition: transform 0.1s;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.darkchat > .main .newgroup .toggle > * {
+    transition: transform 0.3s;
+}
+
+.darkchat > .main .newgroup .toggle:hover {
+    transform: scale(1.1);
+}
+
+.darkchat > .main .newgroup.open .creategroup {
+    width: 8vw;
+    color: white;
+}
+
+.darkchat > .main .newgroup.open .toggle {
+    box-shadow: -0.2vw 0 1vw 0 rgba(0, 0, 0, 0.3);
+}
+
+.darkchat > .main .newgroup.open .toggle > * {
+    transform: rotate(45deg);
+}
+
+.darkchat > .main .newgroup .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    position: absolute;
+    bottom: 50%;
+    width: 0;
+    height: 0;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1vw;
+    backdrop-filter: blur(1vw);
+
+    transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    overflow: hidden;
+}
+
+.darkchat > .main .newgroup .container > .title {
+    margin: 1.2vw 0 0.5vw;
+    width: fit-content;
+
+    color: white;
+    font-size: 0.8vw;
+    font-family: PoppinsMedium;
+}
+
+.darkchat > .main .newgroup .container .inputs label {
+    display: block;
+    margin-left: 0.8vw;
+    line-height: 0.9vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.darkchat > .main .newgroup .container .inputs {
+    width: 88%;
+}
+
+.darkchat > .main .newgroup .container .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.1vw;
+
+    padding-left: 0.8vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.darkchat > .main .newgroup .container .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.darkchat > .main .newgroup .container .inputs .image {
+    position: relative;
+    z-index: 1;
+}
+
+.darkchat > .main .newgroup .container .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #8a39f5;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.darkchat > .main .newgroup .container .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.darkchat > .main .newgroup .container .inputs .upload:hover {
+    background-color: #a662ff;
+    cursor: pointer;
+}
+
+.darkchat > .main .newgroup.open .container {
+    width: 12.5vw;
+    height: 16vw;
+}
+
+/* --------------------- */
+/* PRIVATE CHAT DIZAINAS */
+/* --------------------- */
+.darkchat > .privatechat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: 0%;
+    transform: translate3d(100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+    
+    transition: 0.35s;
+    overflow: hidden;
+}
+
+.darkchat > .privatechat.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.darkchat > .privatechat .header {
+    display: flex;
+    align-items: center;
+
+    margin-top: 20%;
+
+    width: 85%;
+    height: 1.7vw;
+}
+
+.darkchat > .privatechat .header #closedarkchat {
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.8);
+
+    margin-right: 0.5vw;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .header #closedarkchat:hover {
+    color: white;
+}
+
+.darkchat > .privatechat .header .cover {
+    flex-shrink: 0;
+
+    width: 1.6vw;
+    height: 1.6vw;
+    border-radius: 3vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.6vw;
+
+    object-fit: cover;
+}
+
+.darkchat > .privatechat .header .info {
+    flex-shrink: 1;
+    min-width: 0;
+    
+    margin-left: 0.5vw;
+}
+
+.darkchat > .privatechat .header .info > p {
+    margin: 0;
+
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+    line-height: 0.7vw;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.darkchat > .privatechat .header .info > .name {
+    font-family: PoppinsMedium;
+}
+
+.darkchat > .privatechat .header .info > .members {
+    font-size: 0.55vw;
+    color: rgba(255, 255, 255, 0.7)
+}
+
+.darkchat > .privatechat .header .buttons {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.3vw;
+
+    margin-left: auto;
+
+    max-width: 7vw;
+}
+
+.darkchat > .privatechat .header .buttons > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    height: 1.4vw;
+    width: 1.4vw;
+
+    padding: 0 0.4vw;
+    outline: 0;
+    border: 0;
+
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.65vw;
+    font-family: Poppins;
+    border-radius: 0.4vw;
+
+    transition: 0.1s background;
+}
+
+.darkchat > .privatechat .header .buttons > button[data-action="edit"] {
+    display: none;
+}
+
+.darkchat > .privatechat.owned .header .buttons > button[data-action="edit"] {
+    display: block;
+}
+
+.darkchat > .privatechat.owned .header .buttons > button[data-action="leave"] {
+    display: none;
+}
+
+.darkchat > .privatechat .header .buttons > button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.darkchat > .privatechat .header .buttons > button[data-action="leave"] {
+    background: rgba(248, 42, 92, 0.5);
+}
+
+.darkchat > .privatechat .header .buttons > button[data-action="leave"]:hover {
+    background: rgba(248, 42, 92, 0.7);
+}
+
+.darkchat > .privatechat hr {
+    display: block;
+    width: 85%; 
+    height: 0.5vw;
+
+    border: 0; 
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    margin: 0.6vw 0; 
+}
+
+.darkchat > .privatechat .messagesscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 6vw);
+    left: 0%;
+
+    margin-top: 6vw;
+    transition: 0.35s;
+}
+
+.darkchat > .privatechat.settings-focused .messagesscreen {
+    left: -100%;
+}
+
+.darkchat > .privatechat .chatmessages {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages::-webkit-scrollbar {
+    display: none;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .system {
+    margin: 0;
+    margin-bottom: 0.5vw;
+    
+    text-align: center;
+    font-size: 0.5vw;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: PoppinsRegular;
+    white-space: nowrap;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other {
+    display: flex;
+    position: relative;
+    margin-left: 8%;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other .box {
+    position: relative;
+
+    padding: 0.7vw 0.7vw 0.7vw 0.7vw;
+    margin-bottom: 0.6vw;
+
+    width: max-content;
+
+    max-width: 9.5vw;
+    background-color: rgba(161, 161, 161, 0.3);
+
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    line-height: 1vw;
+
+    word-wrap: break-word;
+    border-radius: 0vw 0.8vw 0.8vw 0.8vw;
+    user-select: text;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other .box > img {
+    position: relative;
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 0.3vw;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other .box > img:hover {
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other .avatar {
+    flex-shrink: 0;
+    margin-right: 0.5vw;
+
+    width: 1.4vw;
+    height: 1.4vw;
+
+    border-radius: 1vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.4vw;
+
+    object-fit: cover;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .other .time {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0;
+    margin-bottom: 0.3vw;
+    
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages .nickname {
+    font-size: 0.6vw;
+    color: white;
+    margin-right: 0.2vw;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .me {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: auto;
+    margin-right: 8%;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .me .box {
+    position: relative;
+
+    padding: 0.7vw 0.7vw 0.7vw 0.7vw;
+    margin-bottom: 0.3vw;
+
+    width: max-content;
+    margin-left: auto;
+
+    max-width: 9.5vw;
+    background-color: #7B20D9;
+
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    line-height: 1vw;
+
+    word-wrap: break-word;
+    border-radius: 0.8vw 0.8vw 0vw 0.8vw;
+    user-select: text;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .me .box > img {
+    position: relative;
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 0.3vw;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .me .box > img:hover {
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .messagesscreen .chatmessages > .me .time {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0;
+    margin-bottom: 0.6vw;
+    margin-left: auto;
+    
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom {
+    position: relative;
+    flex-shrink: 0;
+    background: transparent;
+    margin-top: 0.5vw;
+    width: 100%;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .line {
+    position: relative;
+
+    margin: 0 auto;
+    margin-top: 0.1vw;
+
+    background-color: #7221DA;
+
+    width: 84%;
+    height: 0.07vw;
+    margin-bottom: 0.7vw;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments {
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 84%;
+    padding: 0.4vw 0.9vw;
+
+    border-radius: 0.7vw 0.7vw 0 0;
+
+    background-color: rgba(110, 98, 255, 0.2);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+
+    overflow: auto;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments::-webkit-scrollbar {
+    display: none;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+    width: 6vw;
+    height: 1.3vw;
+    border-radius: 0.3vw;
+    margin-right: 0.6vw;
+
+    background-color: rgba(110, 98, 255, 0.2);
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment > img {
+    width: 0.9vw;
+    height: 0.9vw;
+    margin-left: 0.2vw;
+    border-radius: 1vw;
+
+    object-fit: cover;
+} 
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment > .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.45vw;
+    font-family: Poppins;
+    margin-left: 0.3vw;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment > .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -0.3vw;
+
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #7221DA;
+    border-radius: 1vw;
+
+    transition: transform 0.1s;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment > .delete:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .attachments > .attachment > .delete > * {
+    font-size: 0.6vw;
+    color: white;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .content {
+    position: relative;
+    margin-bottom: 2vw;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .text {
+    display: block;
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 84%;
+    height: 2.5vw;
+
+    font-size: 0.7vw;
+
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    outline: 0;
+    border: 0;
+
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: white;
+
+    background-color: rgba(110, 98, 255, 0.2);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .content.attached .text {
+    border-radius: 0 0 0.7vw 0.7vw;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .text::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .text::selection {
+    background-color: #7221DA;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .send {
+    position: absolute;
+    top: 50%;
+    right: 13%;
+    transform: translateY(-50%);
+    
+    width: 1.3vw;
+    height: 1.3vw;
+    background: linear-gradient(to bottom right, #7221DA, #9D1ED9);
+    box-shadow: 0.2vw 0.2vw 1.3vw rgba(110, 98, 255, 0.15), 0.1vw 0.1vw 1.3vw rgba(110, 98, 255, 0.05), 0.2vw 0.31vw 0.52vw rgba(110, 98, 255, 0.15);
+    border-radius: 3vw;
+
+    color: white;
+    font-size: 0.55vw;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .send:hover {
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .messagesscreen .bottom .send > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -45%);
+}
+
+.darkchat > .privatechat .messagesscreen .more {
+    position: absolute;
+    bottom: 25%;
+    left: 13%;
+    z-index: 100;
+}
+
+.darkchat .more > .more-items {
+    background-color: #7121dab7;
+}
+
+.darkchat .more > .more-items > .open-more {
+    background-color: #7221DA;
+}
+
+.darkchat > .privatechat .settingsscreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 6vw);
+    right: -100%;
+
+    margin-top: 6vw;
+    transition: 0.35s;
+}
+
+.darkchat > .privatechat.settings-focused .settingsscreen {
+    right: 0%;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs label {
+    display: block;
+    margin-left: 0.8vw;
+    line-height: 0.9vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.darkchat > .privatechat .settingsscreen .inputs {
+    position: relative;
+    width: 85%;
+    height: 100%;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .flex {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.4vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    
+    background-color: rgba(110, 98, 255, 0.2);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.darkchat > .privatechat .settingsscreen .inputs > .buttons {
+    position: absolute;
+
+    width: 100%;
+    bottom: 1.2vw;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs button {
+    display: block;
+    margin: 0.7vw auto 0.7vw;
+
+    width: 100%;
+    height: 2.1vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+
+    border-radius: 0.5vw;
+    outline: 0;
+    padding: 0;
+
+    transition: 0.1s;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .image {
+    position: relative;
+    z-index: 1;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #8a39f5;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .upload:hover {
+    background-color: #a662ff;
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .container {
+    overflow: hidden;
+    border-radius: 0.7vw;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist {
+    position: relative;
+
+    width: 100%;
+    max-height: 7.2vw;
+    border-radius: 0.7vw;
+
+    background: rgba(110, 98, 255, 0.1);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1vw;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member {
+    display: flex;
+    align-items: center;
+    
+    position: relative;
+
+    width: 100%;
+    height: 2.2vw;
+    background: rgba(110, 98, 255, 0.2);
+    padding: 0 0.7vw;
+    transition: opacity 0.1s, height 0.2s, background 0.1s;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member.hidden {
+    height: 0vw;
+    opacity: 0.0;
+    overflow: hidden;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member:nth-child(even) {
+    background: transparent;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .avatar {
+    width: 1.3vw;
+    height: 1.3vw;
+    border-radius: 3vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.3vw;
+
+    object-fit: cover;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .name {
+    margin-left: 0.5vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.55vw;
+    font-family: PoppinsMedium;
+    color: white;    
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .buttons {
+    display: flex;
+    gap: 0.3vw;
+    align-items: center;
+
+    position: absolute;
+    right: 16%;
+
+    width: fit-content;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .buttons > * {
+    font-size: 0.75vw;
+    color: white;
+    cursor: pointer;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .buttons > *[data-action="kick"] {
+    color: #F05B5B;
+}
+
+.darkchat > .privatechat .settingsscreen .inputs .memberlist > .member > .buttons > *[data-action="ban"] {
+    color: rgba(248, 42, 92, 0.5);
+}
+
+.darkchat .fill {
+    border: 0;
+    color: white;
+    background-color: #7221DA;
+}
+
+.darkchat .nofill {
+    background: rgba(114, 33, 218, 0.2);
+    border: solid 0.1vw rgba(114, 33, 218, 0.5);
+    color: #A3AFC5;
+}
+
+.darkchat .fill:hover {
+    background-color: #9544ff;
+}
+
+.darkchat .nofill:hover {
+    background-color: rgba(114, 33, 218, 0.4);
+}
+
+/* ------------------------- */
+/* EDIT GROUP MODAL DIZAINAS */
+/* ------------------------- */
+.darkchat > .darkPopup {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 9999999;
+}
+
+.darkchat > .darkPopup > .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.darkchat > .darkPopup > .box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 85%;
+    min-height: 3vw;
+    background-color: rgba(71, 39, 114, 0.25);
+
+    border-radius: 0.7vw;
+    backdrop-filter: blur(1vw);
+    overflow: hidden;
+
+    animation: showPopup 0.2s ease-in-out;
+}
+
+.darkchat > .darkPopup.open {
+    display: flex;
+}
+
+.darkchat > .darkPopup.closing > .bg {
+    animation: fadeOut 0.2s ease-in-out;
+}
+
+.darkchat > .darkPopup.closing > .box {
+    animation: hidePopup 0.2s ease-in-out;
+}
+
+.darkchat > .darkPopup .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0.8vw 0 0.5vw;
+    width: 88%;
+}
+
+.darkchat > .darkPopup .header > .title {
+    margin: 0;
+    width: fit-content;
+
+    color: white;
+    font-size: 0.8vw;
+    font-family: PoppinsMedium;
+}
+
+.darkchat > .darkPopup .header > .close {
+    position: absolute;
+    right: 0;
+
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8vw;
+    transition: color 0.1s;
+    cursor: pointer;
+}
+
+.darkchat > .darkPopup .header > .close:hover {
+    color: white;
+}
+
+.darkchat > .darkPopup .inputs label {
+    display: block;
+    margin-left: 0.8vw;
+    line-height: 0.9vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.darkchat > .darkPopup .inputs {
+    width: 88%;
+}
+
+.darkchat > .darkPopup .inputs .flex {
+    display: flex;
+    gap: 0.5vw;
+}
+
+.darkchat > .darkPopup .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.1vw;
+
+    padding-left: 0.8vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    
+    background-color: rgba(110, 98, 255, 0.2);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.darkchat > .darkPopup .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.darkchat > .darkPopup .inputs button {
+    display: block;
+    margin: 0.7vw auto 0.7vw;
+
+    width: 70%;
+    height: 1.3vw;
+
+    font-size: 0.55vw;
+    font-family: PoppinsMedium;
+    color: white;
+
+    background: #7221DA;
+    box-shadow: 0 0 0.3vw 0 #7221DA;
+
+    border-radius: 5vw;
+    outline: 0;
+    border: 0;
+    padding: 0;
+
+    transition: 0.1s;
+}
+
+.darkchat > .darkPopup .inputs .image {
+    position: relative;
+    z-index: 1;
+}
+
+.darkchat > .darkPopup .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #8a39f5;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.darkchat > .darkPopup .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.darkchat > .darkPopup .inputs .upload:hover {
+    background-color: #a662ff;
+    cursor: pointer;
+}

@@ -1,0 +1,2036 @@
+.messages {
+    display: none;
+    position: absolute;
+    top: 0%;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23, 30, 79);
+    opacity: 0.0;
+
+    transition: opacity 0.2s;
+    overflow: hidden;
+}
+
+/* -------------- */
+/* CHATS DIZAINAS */
+/* -------------- */
+
+.messages > .chats {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.messages > .chats > .header {
+    position: relative;
+    width: 98%;
+    height: 19%;
+    margin: 0 auto;
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.25), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.messages > .chats > .header > .left {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 51%;
+    left: 9%;
+    opacity: 1.0;
+    transition: opacity 0.2s;
+}
+
+.messages > .chats > .header.search > .left {
+    opacity: 0.0;
+}
+
+.messages > .chats > .header > .left > .icon {
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.messages > .chats > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.messages > .chats > .header > .search {
+    position: absolute;
+    top: 48%;
+    right: 8%;
+
+    width: 1.8vw;
+    height: 1.8vw;
+
+    border-radius: 2vw;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7vw;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    transition: background-color 0.1s;
+}
+
+.messages > .chats > .header > .search > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: color 0.15s;
+}
+
+.messages > .chats > .header > .search > .searchicon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.messages > .chats > .header > .search > .closeicon {
+    color: transparent;
+}
+
+.messages > .chats > .header.search > .search > .searchicon {
+    color: transparent;
+}
+
+.messages > .chats > .header.search > .search > .closeicon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.messages > .chats > .header > .search:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.messages > .chats > .header > .searchinput {
+    position: absolute;
+    top: 48%;
+    right: 23%;
+
+    width: 0vw;
+    height: 1.8vw;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.messages > .chats > .header.search > .searchinput {
+    width: 10.2vw;
+}
+
+.messages > .chats > .header > .searchinput > input {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0 0.5vw;
+    outline: 0;
+    border: 0;
+    padding-left: 1.7vw;
+
+    font-size: 0.55vw;
+
+    font-family: Poppins;
+    color: white;
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.messages > .chats > .header > .searchinput > input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.messages > .chats > .header > .searchinput > .icon {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65vw;
+}
+
+.messages > .chats > .noresults {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.messages > .chats > .noresults > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.2vw;
+
+    width: 10vw;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messages > .chats > .noresults > .title { 
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.9vw;
+}
+
+.messages > .chats > .noresults > .description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.messages .groups {
+    position: relative;
+
+    margin-top: 0.5vw;
+
+    width: 100%;
+}
+
+.messages .groups > .title {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0 0.6vw;
+
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsMedium;
+    font-size: 0.45vw;
+    box-sizing: border-box;
+}
+
+.messages .groups > .title:before,
+.messages .groups > .title:after {
+    content: "";
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+    margin: 0.3vw;
+}
+
+.messages .grouplist {
+    display: flex;
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 0.4vw 1vw 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+.messages .grouplist::-webkit-scrollbar {
+    display: none;
+}
+
+.messages .grouplist > .group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    align-items: center;
+
+    margin-right: 0.6vw;
+
+    position: relative;
+    max-width: 3.2vw;
+    transition: transform 0.1s, width 0.2s, margin 0.2s, opacity 0.1s;
+}
+
+.messages .grouplist > .group.muted {
+    opacity: 0.7;
+}
+
+.messages .grouplist > .group.new {
+    margin-right: 0;
+}
+
+.messages .grouplist > .group.new > .cover {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2vw;
+}
+
+.messages .grouplist > .group.new > .title {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.messages .grouplist > .group:hover {
+    cursor: pointer;
+}
+
+.messages .grouplist > .group:hover > .title {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.messages .grouplist > .group:hover > .cover {
+    color: white;
+    background-color: #2c9bce !important;
+    transform: scale(1.1);
+}
+
+.messages .grouplist > .group > * {
+    transition: 0.1s;
+}
+
+.messages .grouplist > .group > img {
+    width: 2vw;
+    height: 2vw;
+
+    border-radius: 1vw;
+    object-fit: cover;
+}
+
+.messages .grouplist > .group > .cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2vw;
+    height: 2vw;
+
+    border-radius: 2vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.8vw;
+    color: white;
+
+    object-fit: cover;
+}
+
+.messages .grouplist > .group > .title {
+    width: 100%;
+    
+    margin: 0;
+    margin-top: 0.3vw;
+
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: PoppinsRegular;
+    font-size: 0.45vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.messages .grouplist > .group > .notifications {
+    position: absolute;
+    top: -6%;
+    right: 2%;
+    width: 0.85vw;
+
+    margin: 0;
+    
+    text-align: center;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 0.85vw;
+
+    background: linear-gradient(to bottom right, #FA8867, #FE5C5C);
+    border-radius: 3vw;
+}
+
+.messages hr { 
+    display: block; 
+    height: 1px;
+
+    border: 0; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    margin: 0.6vw 0; 
+}
+
+.messages .chatlist {
+    position: relative;
+
+    width: 100%;
+    height: 65%;
+
+    overflow: auto;
+}
+
+.messages .chatlist::-webkit-scrollbar {
+    display: none;
+}
+
+.messages .chatlist > .chat {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    height: 4vw;
+
+    transition: height 0.3s ease-in-out, opacity 0.1s, background 0.1s;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.messages .chatlist > .chat:last-child {
+    margin-bottom: 3vw;
+}
+
+.messages .chatlist > .chat::after {
+    position: absolute;
+    content: "";
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    
+    height: 1px;
+    width: 87%;
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+.messages .chatlist > .chat > .delete {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 0;
+
+    background: #FF5E5E;
+    color: white;
+    font-size: 0.6vw;
+
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+.messages .chatlist > .chat > .delete.faster {
+    transition: width 0.25s;
+}
+
+.messages .chatlist > .chat > .delete > * {
+    pointer-events: none;
+}
+
+.messages .chatlist > .chat > .delete > .title {
+    margin: 0;
+    margin-left: 0.3vw;
+    
+    color: white;
+    font-family: Poppins;
+    font-size: 0.55vw;
+}
+
+.messages .chatlist > .chat.unread {
+    background: linear-gradient(to right, #2c9bce 0%, #2c9bce 2.5%, transparent 2.5%), linear-gradient(to right, rgba(24, 55, 109, 0.3), #18376D);
+}
+
+.messages .chatlist > .chat:hover {
+    background-color: #18376dda;
+    cursor: pointer;
+}
+
+.messages .chatlist > .chat .inner {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.messages .chatlist > .chat .avatar {
+    flex-shrink: 0;
+    position: relative;
+    width: 2.9vw;
+    height: 2.9vw;
+
+    border-radius: 1.3vw;
+    margin-left: 1vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    line-height: 2.9vw;
+
+    object-fit: cover;
+}
+
+.messages .chatlist > .chat .info {
+    flex-shrink: 1;
+    position: relative;
+    height: 1.8vw;
+    width: 50%;
+
+    margin-left: 0.5vw;
+    margin-right: auto;
+}
+
+.messages .chatlist > .chat .name {
+    margin: 0;
+    
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+    color: white;
+}
+
+.messages .chatlist > .chat .lastmessage {
+    margin: 0;
+    
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.747);
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.messages .chatlist > .chat .rightinfo {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    height: 1.6vw;
+    margin-right: 1vw;
+}
+
+.messages .chatlist > .chat .time {
+    margin: 0;
+    margin-bottom: 0.2vw;
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.messages .chatlist > .chat .notifications {
+    width: 0.85vw;
+    margin: 0;
+    margin-top: -0.1vw;
+    text-align: center;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 0.85vw;
+    background: linear-gradient(to bottom right, #FA8867, #FE5C5C);
+    border-radius: 3vw;
+}
+
+.messages .chatlist > .chat .bell {
+    margin: 0;
+
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.messages > .chats > .newmessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 9%;
+    right: 9%;
+
+    color: white;
+    font-size: 1.1vw;
+
+    width: 2.3vw;
+    height: 2.3vw;
+    background-color: #31A7DF;
+    border-radius: 5vw;
+    transition: 0.1s;
+}
+
+.messages > .chats > .newmessage:hover {
+    background-color: #3fbbf5;
+    cursor: pointer;
+}
+
+/* ----------------- */
+/* NEW CHAT DIZAINAS */
+/* ----------------- */
+.messages > .newgroup,
+.messages > .managegroup {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform: translate3d(100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #082044;
+    transition: 0.35s;
+    z-index: 999;
+}
+
+.messages > .newgroup.visible,
+.messages > .managegroup.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.messages > .newgroup > .header,
+.messages > .managegroup > .header {
+    position: relative;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.35), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.messages > .newgroup > .header > .menu,
+.messages > .managegroup > .header > .menu {
+    position: absolute;
+    width: 26%;
+    height: 100%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.4), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    transition: 0.2s;
+}
+
+.messages > .newgroup > .header > .menu:hover,
+.messages > .managegroup > .header > .menu:hover {
+    background-color: rgba(18, 93, 135, 0.4);
+}
+
+.messages > .newgroup > .header > .menu > .icon,
+.messages > .managegroup > .header > .menu > .icon {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+
+    font-size: 1.6vw;
+    color: white;
+    pointer-events: none;
+}
+
+.messages > .newgroup > .header > .left,
+.messages > .managegroup > .header > .left {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+}
+
+.messages > .newgroup > .header > .left > .title,
+.messages > .managegroup > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.messages > .newgroup > .inputs,
+.messages > .managegroup > .inputs {
+    position: relative;
+    width: 85%;
+    height: 72%;
+    
+    margin: 0.7vw auto 0;
+}
+
+.messages > .newgroup > .inputs .leftcontacts,
+.messages > .managegroup > .inputs .leftcontacts {
+    margin: 0;
+    margin-top: 0.5vw;
+
+    text-align: center;
+    font-size: 0.5vw;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: Poppins;
+}
+
+.messages > .newgroup > .inputs label,
+.messages > .managegroup > .inputs label {
+    display: block;
+    margin-left: 1vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.messages > .newgroup > .inputs .image,
+.messages > .managegroup > .inputs .image {
+    position: relative;
+    z-index: 1;
+}
+
+.messages > .newgroup > .inputs input,
+.messages > .managegroup > .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.4vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: rgba(11, 56, 100);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.messages > .newgroup > .inputs .upload,
+.messages > .managegroup > .inputs .upload {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: #31a8dfe1;
+    border-radius: 5vw;
+    transition: 0.05s;
+}
+
+.messages > .newgroup > .inputs .upload > .icon,
+.messages > .managegroup > .inputs .upload > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    width: fit-content;
+    font-size: 0.6vw;
+    pointer-events: none;
+}
+
+.messages > .newgroup > .inputs .upload:hover,
+.messages > .managegroup > .inputs .upload:hover {
+    background-color: #31a8df;
+    cursor: pointer;
+}
+
+.messages > .newgroup > .inputs input::placeholder,
+.messages > .managegroup > .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.656);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.messages > .newgroup > .inputs > .groupmembers,
+.messages > .managegroup > .inputs > .groupmembers {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 0.4vw;
+
+    width: 100%;
+    height: 2.4vw;
+
+    padding-left: 1vw;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: rgba(11, 56, 100);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > .contact,
+.messages > .managegroup > .inputs > .groupmembers > .contact {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+    max-width: 6vw;
+    height: 1.3vw;
+    border-radius: 0.3vw;
+    margin-right: 0.8vw;
+
+    background-color: rgba(28, 162, 238, 0.19);
+    transition: width 0.2s, opacity 0.1s;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > .contact > img,
+.messages > .managegroup > .inputs > .groupmembers > .contact > img {
+    width: 0.9vw;
+    height: 0.9vw;
+    margin-left: 0.2vw;
+    border-radius: 1vw;
+
+    object-fit: cover;
+} 
+
+.messages > .newgroup > .inputs > .groupmembers > .contact > .title,
+.messages > .managegroup > .inputs > .groupmembers > .contact > .title {
+    max-width: 65%;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.45vw;
+    font-family: Poppins;
+    margin-left: 0.3vw;
+    margin-right: 0.8vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > .contact > .delete,
+.messages > .managegroup > .inputs > .groupmembers > .contact > .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -0.3vw;
+
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #31a8df;
+    border-radius: 1vw;
+
+    transition: transform 0.1s;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > .contact > .delete:hover,
+.messages > .managegroup > .inputs > .groupmembers > .contact > .delete:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > .contact > .delete > *,
+.messages > .managegroup > .inputs > .groupmembers > .contact > .delete > * {
+    font-size: 0.6vw;
+    color: white;
+}
+
+.messages > .newgroup > .inputs > .groupmembers > input,
+.messages > .managegroup > .inputs > .groupmembers > input {
+    display: block;
+
+    height: 100%;
+    min-width: 7vw;
+    width: 100%;
+    margin: 0;
+    
+    padding: 0;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: transparent;
+}
+
+.messages > .newgroup > .inputs > .groupmembers::-webkit-scrollbar,
+.messages > .managegroup > .inputs > .groupmembers::-webkit-scrollbar {
+    display: none;
+}
+
+.messages > .newgroup > .inputs .container,
+.messages > .managegroup > .inputs .container {
+    overflow: hidden;
+    margin-top: 0.3vw;
+    border-radius: 0.7vw;
+}
+
+.messages > .newgroup > .inputs .contactlist,
+.messages > .managegroup > .inputs .contactlist {
+    position: relative;
+
+    width: 100%;
+    max-height: 5.2vw;
+    border-radius: 0.7vw;
+
+    background: rgb(11, 57, 100, 0.3);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.messages > .newgroup > .inputs .contactlist::-webkit-scrollbar,
+.messages > .managegroup > .inputs .contactlist::-webkit-scrollbar {
+    width: 0.2vw;
+}
+
+.messages > .newgroup > .inputs .contactlist::-webkit-scrollbar-thumb,
+.messages > .managegroup > .inputs .contactlist::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1vw;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact,
+.messages > .managegroup > .inputs .contactlist > .contact {
+    position: relative;
+
+    width: 100%;
+    height: 2.6vw;
+    background: rgb(11, 57, 100, 0.5);
+    padding: 0 0.7vw;
+    transition: opacity 0.1s, height 0.2s, background 0.1s;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact.hidden,
+.messages > .managegroup > .inputs .contactlist > .contact.hidden {
+    height: 0vw;
+    opacity: 0.0;
+    overflow: hidden;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact:nth-child(even),
+.messages > .managegroup > .inputs .contactlist > .contact:nth-child(even) {
+    background: transparent;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact:hover,
+.messages > .managegroup > .inputs .contactlist > .contact:hover {
+    background-color: rgb(11, 57, 100, 0.8);
+    cursor: pointer;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact > .avatar,
+.messages > .managegroup > .inputs .contactlist > .contact > .avatar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 1.6vw;
+    height: 1.6vw;
+    border-radius: 3vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.7vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.6vw;
+
+    object-fit: cover;
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact > .name,
+.messages > .managegroup > .inputs .contactlist > .contact > .name {
+    position: absolute;
+    top: -2%;
+    left: 21%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.6vw;
+    font-family: PoppinsMedium;
+    color: white;    
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact > .number,
+.messages > .managegroup > .inputs .contactlist > .contact > .number {
+    position: absolute;
+    top: 29%;
+    left: 21%;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 7vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.582);    
+}
+
+.messages > .newgroup > .inputs .contactlist > .contact > .addmember,
+.messages > .managegroup > .inputs .contactlist > .contact > .addmember {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 16%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1vw;
+    height: 1vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1vw;
+
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: white;
+}
+
+.messages > .newgroup > .inputs .noresults,
+.messages > .managegroup > .inputs .noresults {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.messages > .newgroup > .inputs .noresults > *,
+.messages > .managegroup > .inputs .noresults > * {
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.2vw;
+
+    width: 10vw;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messages > .newgroup > .inputs .noresults > .title,
+.messages > .managegroup > .inputs .noresults > .title { 
+    color: white;
+    font-family: PoppinsMedium;
+    font-size: 0.9vw;
+}
+
+.messages > .newgroup > .inputs .noresults > .description,
+.messages > .managegroup > .inputs .noresults > .description {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: PoppinsRegular;
+    font-size: 0.6vw;
+}
+
+.messages > .newgroup > .inputs button,
+.messages > .managegroup > .inputs button {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 2.1vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+
+    border-radius: 0.5vw;
+    outline: 0;
+    padding: 0;
+
+    transition: 0.1s;
+}
+
+/* ------------- */
+/* CHAT DIZAINAS */
+/* ------------- */
+.messages > .privatechat {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+	top: 0;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23, 30, 79);
+    transition: 0.35s;
+}
+
+.messages > .privatechat.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.messages > .privatechat > .header {
+    position: absolute;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.25), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.messages > .privatechat > .header > .left {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 38%;
+
+    top: 42%;
+    left: 8%;
+}
+
+.messages > .privatechat > .header > .left > .avatar {
+    position: absolute;
+    top: 0%;
+    
+    width: 2.3vw;
+    height: 2.3vw;
+    border-radius: 3vw;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.8vw;
+    color: white;
+
+    text-align: center;
+    line-height: 2.3vw;
+
+    object-fit: cover;
+}
+
+.messages > .privatechat > .header > .left > .name {
+    position: absolute;
+    top: 13%;
+    left: 20%;
+    width: 8vw;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+
+    margin: 0;
+    
+    font-size: 0.65vw;
+    font-family: Poppins;
+    color: white;
+    letter-spacing: 0.03vw;
+}
+
+.messages > .privatechat > .header > .left > .number {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+
+    margin: 0;
+    
+    font-size: 0.55vw;
+    font-family: PoppinsMedium;
+    color: rgba(255, 255, 255, 0.747);
+    letter-spacing: 0.03vw;
+}
+
+.messages .privatechat.group > .header > .left > .number {
+    font-family: Poppins;
+}
+
+.messages .privatechat > .header > .right {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 53%;
+    right: 8%;
+}
+
+.messages .privatechat #managegroup {
+    display: none;
+}
+
+.messages .privatechat.owned #managegroup {
+    display: flex;
+    align-items: center;
+    
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: 0.5vw;
+    transition: 0.1s;
+}
+
+.messages .privatechat.owned #managegroup:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.messages .privatechat #leavegroup {
+    display: none;
+}
+
+.messages .privatechat.group:not(.owned) #leavegroup {
+    display: flex;
+    align-items: center;
+    
+    font-size: 0.8vw;
+    color: rgba(245, 96, 96, 0.7);
+    margin-left: 0.5vw;
+    transition: 0.1s;
+}
+
+.messages .privatechat.group:not(.owned) #leavegroup:hover {
+    color: rgba(245, 96, 96, 0.9);
+    cursor: pointer;
+}
+
+.messages #closechat {
+    display: flex;
+    align-items: center;
+    
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: 0.5vw;
+    transition: 0.1s;
+}
+
+.messages #closechat:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.messages > .privatechat > .chatmessages {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    margin-top: 6vw;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.messages > .privatechat > .chatmessages::-webkit-scrollbar {
+    display: none;
+}
+
+.messages > .privatechat > .chatmessages > .system {
+    margin: 0;
+    margin-bottom: 0.5vw;
+    
+    text-align: center;
+    font-size: 0.5vw;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: PoppinsRegular;
+    white-space: nowrap;
+}
+
+.messages > .privatechat > .chatmessages > .other {
+    position: relative;
+    margin-left: 8%;
+    width: 80%;
+}
+
+.messages > .privatechat.group > .chatmessages > .other {
+    display: flex;
+}
+
+.messages > .privatechat > .chatmessages > .other .box {
+    position: relative;
+
+    padding: 0.7vw 0.7vw 0.7vw 0.7vw;
+    margin-bottom: 0.6vw;
+
+    width: max-content;
+
+    max-width: 9.5vw;
+    background-color: #31A7DF;
+
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.6vw;
+    font-family: Poppins;
+    line-height: 1vw;
+
+    word-wrap: break-word;
+    border-radius: 0vw 0.8vw 0.8vw 0.8vw;
+    user-select: text;
+}
+
+.messages > .privatechat > .chatmessages > .other .box > img {
+    position: relative;
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 0.3vw;
+}
+
+.messages > .privatechat > .chatmessages > .other .box > img:hover {
+    cursor: pointer;
+}
+
+.messages > .privatechat > .chatmessages > .other .avatar {
+    flex-shrink: 0;
+    margin-right: 0.5vw;
+
+    width: 1.4vw;
+    height: 1.4vw;
+
+    border-radius: 1vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+
+    text-align: center;
+    line-height: 1.4vw;
+
+    object-fit: cover;
+}
+
+.messages > .privatechat > .chatmessages > .other .time {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0;
+    margin-bottom: 0.3vw;
+    
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.messages > .privatechat > .chatmessages .nickname {
+    font-size: 0.6vw;
+    color: white;
+    margin-right: 0.2vw;
+}
+
+.messages > .privatechat > .chatmessages > .me {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: auto;
+    margin-right: 8%;
+}
+
+.messages > .privatechat > .chatmessages > .me .box {
+    position: relative;
+
+    padding: 0.7vw 0.7vw 0.7vw 0.7vw;
+    margin-bottom: 0.6vw;
+
+    width: max-content;
+    margin-left: auto;
+
+    max-width: 9.5vw;
+    background-color: #ffffff;
+
+    color: #707C97;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    line-height: 1vw;
+
+    word-wrap: break-word;
+    border-radius: 0.8vw 0.8vw 0vw 0.8vw;
+    user-select: text;
+}
+
+.messages > .privatechat > .chatmessages > .me .box > img {
+    position: relative;
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 0.3vw;
+}
+
+.messages > .privatechat > .chatmessages > .me .box > img:hover {
+    cursor: pointer;
+}
+
+.messages > .privatechat > .chatmessages > .me .time {
+    position: relative;
+
+    width: fit-content;
+
+    margin: 0;
+    margin-bottom: 0.3vw;
+    
+    font-size: 0.5vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.messages > .privatechat > .bottom {
+    position: relative;
+    flex-shrink: 0;
+    background: transparent;
+    margin-top: 0.5vw;
+    width: 100%;
+}
+
+.messages > .privatechat > .bottom .line {
+    position: relative;
+
+    margin: 0 auto;
+    margin-top: 0.1vw;
+
+    background-color: #31A7DF;
+
+    width: 84%;
+    height: 0.07vw;
+    margin-bottom: 0.7vw;
+}
+
+.messages > .privatechat > .bottom .attachments {
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 84%;
+    padding: 0.4vw 0.9vw;
+
+    border-radius: 0.7vw 0.7vw 0 0;
+
+    background-color: rgba(28, 162, 238, 0.19);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+
+    overflow: auto;
+}
+
+.messages > .privatechat > .bottom .attachments::-webkit-scrollbar {
+    display: none;
+}
+
+.messages > .privatechat > .bottom .attachments > .attachment {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+    width: 6vw;
+    height: 1.3vw;
+    border-radius: 0.3vw;
+    margin-right: 0.6vw;
+
+    background-color: rgba(28, 162, 238, 0.19);
+}
+
+.messages > .privatechat > .bottom .attachments > .attachment > img {
+    width: 0.9vw;
+    height: 0.9vw;
+    margin-left: 0.2vw;
+    border-radius: 1vw;
+
+    object-fit: cover;
+} 
+
+.messages > .privatechat > .bottom .attachments > .attachment > .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.45vw;
+    font-family: Poppins;
+    margin-left: 0.3vw;
+}
+
+.messages > .privatechat > .bottom .attachments > .attachment > .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -0.3vw;
+
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #31a8df;
+    border-radius: 1vw;
+
+    transition: transform 0.1s;
+}
+
+.messages > .privatechat > .bottom .attachments > .attachment > .delete:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.messages > .privatechat > .bottom .attachments > .attachment > .delete > * {
+    font-size: 0.6vw;
+    color: white;
+}
+
+.messages > .privatechat > .bottom .content {
+    position: relative;
+    margin-bottom: 2vw;
+}
+
+.messages > .privatechat > .bottom .text {
+    display: block;
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 84%;
+    height: 2.5vw;
+
+    font-size: 0.7vw;
+
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    outline: 0;
+    border: 0;
+
+    font-size: 0.6vw;
+    font-family: Poppins;
+    color: white;
+
+    background-color: rgba(28, 162, 238, 0.19);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.messages > .privatechat > .bottom .content.attached .text {
+    border-radius: 0 0 0.7vw 0.7vw;
+}
+
+.messages > .privatechat > .bottom .text::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.messages > .privatechat > .bottom .text::selection {
+    background-color: rgb(24, 130, 192);
+}
+
+.messages > .privatechat > .bottom .send {
+    position: absolute;
+    top: 50%;
+    right: 13%;
+    transform: translateY(-50%);
+    
+    width: 1.3vw;
+    height: 1.3vw;
+    background: linear-gradient(to bottom right, #37BEE9, #2061C3);
+    box-shadow: 0.2vw 0.2vw 1.3vw rgba(42, 139, 242, 0.15), 0.1vw 0.1vw 1.3vw rgba(42, 139, 242, 0.05), 0.2vw 0.31vw 0.52vw rgba(42, 139, 242, 0.15);
+    border-radius: 3vw;
+
+    color: white;
+    font-size: 0.55vw;
+}
+
+.messages > .privatechat > .bottom .send:hover {
+    cursor: pointer;
+}
+
+.messages > .privatechat > .bottom .send > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -45%);
+}
+
+.messages > .privatechat .more {
+    position: absolute;
+    bottom: 25%;
+    left: 13%;
+    z-index: 100;
+}
+
+/* ----------------- */
+/* NEW CHAT DIZAINAS */
+/* ----------------- */
+.newchat {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform: translate3d(110%, 0, 0);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #082044;
+    transition: 0.35s;
+}
+
+.newchat.visible {
+    transform: translate3d(0%, 0, 0);
+}
+
+.newchat > .header {
+    position: absolute;
+    width: 98%;
+    height: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.35), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+}
+
+.newchat > .header > .menu {
+    position: absolute;
+    width: 26%;
+    height: 100%;
+    left: 13%;
+    transform: translateX(-50%);
+
+    background: radial-gradient(90% 120%, rgba(18, 93, 135, 0.4), rgba(18, 93, 135, 0.3));
+    box-shadow: 0.52vw 0.52vw 1.3vw rgba(18, 93, 135, 0.1), 0.78vw 0.78vw 1.8vw rgba(18, 93, 135, 0.05), 0.52vw 0.52vw 2.6vw rgba(18, 93, 135, 0.1);
+    border-radius: 0px 0px 1.8vw 1.8vw;
+    transition: 0.2s;
+}
+
+.newchat > .header > .menu:hover {
+    background-color: rgba(18, 93, 135, 0.4);
+}
+
+.newchat > .header > .menu > .icon {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0.9);
+
+    font-size: 1.6vw;
+    color: white;
+    pointer-events: none;
+}
+
+.newchat > .header > .left {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+}
+
+.newchat > .header > .left > .title {
+    margin: 0;
+    margin-left: 0.6vw;
+
+    font-family: PoppinsBolder;
+    font-size: 0.9vw;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 0.02vw;
+}
+
+.newchat > .inputs {
+    position: absolute;
+    top: 21.5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.newchat > .inputs label {
+    display: block;
+    margin-left: 1vw;
+    line-height: 1vw;
+    margin-bottom: 0.2vw;
+    font-size: 0.55vw;
+    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+.newchat > .inputs input {
+    position: relative;
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 12.5vw;
+    height: 2.4vw;
+    font-size: 0.7vw;
+
+    padding-left: 1vw;
+    outline: 0;
+    border: 0;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: rgba(11, 56, 100);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+}
+
+.newchat > .inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+.newchat > .inputs #searchname {
+    position: absolute;
+    top: 10%;
+    right: 7%;
+    
+    font-size: 0.8vw;
+    color: #31a8df;
+    z-index: 100000;
+}
+
+.newchat > .inputs #searchnumber {
+    position: absolute;
+    top: 29.5%;
+    right: 7%;
+    
+    font-size: 0.8vw;
+    color: #31a8df;
+    z-index: 10000;
+}
+
+.newchat .namesearch {
+    display: none;
+    position: absolute;
+    top: 3vw;
+    width: 12.5vw;
+    padding-top: 1vw;
+    padding-bottom: 0.4vw;
+    max-height: 6vw;
+    overflow: auto;
+
+    background: rgb(8, 24, 48);
+    border-radius: 0 0 0.7vw 0.7vw;
+    z-index: 10001;
+    transition: 0.25s;
+}
+
+.newchat .namesearch::-webkit-scrollbar {
+    width: 0.2vw;
+    background: transparent;
+}
+
+.newchat .namesearch::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 1vw 1vw rgb(25, 73, 146);
+    border-bottom: solid 0.4vw transparent;
+}
+
+.newchat .namesearch > .result {
+    width: 100%;
+
+    text-align: center;
+    line-height: 1.5vw;
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+}
+
+.newchat .namesearch > .result:hover {
+    background-color: rgb(11, 36, 73);
+}
+
+.newchat .numbersearch {
+    display: none;
+    position: absolute;
+    top: 7vw;
+    width: 12.5vw;
+    padding-top: 1vw;
+    padding-bottom: 0.4vw;
+    max-height: 6vw;
+    overflow: auto;
+
+    background: rgb(8, 24, 48);
+    border-radius: 0 0 0.7vw 0.7vw;
+    z-index: 999;
+    transition: 0.25s;
+}
+
+.newchat .numbersearch::-webkit-scrollbar {
+    width: 0.2vw;
+    background: transparent;
+}
+
+.newchat .numbersearch::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 1vw 1vw rgb(25, 73, 146);
+    border-bottom: solid 0.4vw transparent;
+}
+
+.newchat .numbersearch > .result {
+    width: 100%;
+
+    text-align: center;
+    line-height: 1.5vw;
+    font-family: Poppins;
+    font-size: 0.6vw;
+    color: white;
+}
+
+.newchat .numbersearch > .result:hover {
+    background-color: rgb(11, 36, 73);
+}
+
+.newchat > .inputs textarea {
+    display: block;
+    margin-bottom: 0.4vw;
+
+    width: 12.5vw;
+    height: 7.5vw;
+    font-size: 0.7vw;
+
+    padding: 0 1vw 0 1vw;
+    outline: 0;
+    border: 0;
+
+    border-top: solid 0.7vw transparent;
+    border-bottom: solid 0.7vw transparent;
+
+    padding-top: 0vw;
+
+    color: white;
+    font-size: 0.6vw;
+    font-family: Poppins;
+    background-color: rgba(28, 162, 238, 0.19);
+    border-radius: 0.7vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    resize: none;
+}
+
+.newchat > .inputs textarea.attached {
+    border-top: solid 2.6vw transparent;
+}
+
+.newchat > .inputs textarea::placeholder {
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 0.6vw;
+    font-family: Poppins;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.newchat > .inputs button {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5vw;
+    width: 98%;
+    height: 2.1vw;
+    border-radius: 0.5vw;
+
+    font-size: 0.65vw;
+    font-family: PoppinsMedium;
+    outline: 0;
+    padding: 0;
+    transition: 0.1s;
+}
+
+.newchat > .inputs .content {
+    position: relative;
+}
+
+.newchat > .inputs .content .attachments {
+    display: flex;
+    flex-wrap: nowrap;
+
+    position: absolute;
+    width: 100%;
+    padding: 0.4vw 0.9vw;
+
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+
+    overflow: auto;
+}
+
+.newchat > .inputs .content .attachments::-webkit-scrollbar {
+    display: none;
+}
+
+.newchat > .inputs .content .attachments > .attachment {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    position: relative;
+    width: 6vw;
+    height: 1.3vw;
+    border-radius: 0.3vw;
+    margin-right: 0.6vw;
+
+    background-color: rgba(28, 162, 238, 0.19);
+}
+
+.newchat > .inputs .content .attachments > .attachment > img {
+    width: 0.9vw;
+    height: 0.9vw;
+    margin-left: 0.2vw;
+    border-radius: 1vw;
+
+    object-fit: cover;
+} 
+
+.newchat > .inputs .content .attachments > .attachment > .title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.45vw;
+    font-family: Poppins;
+    margin-left: 0.3vw;
+}
+
+.newchat > .inputs .content .attachments > .attachment > .delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: -0.3vw;
+
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: #31a8df;
+    border-radius: 1vw;
+
+    transition: transform 0.1s;
+}
+
+.newchat > .inputs .content .attachments > .attachment > .delete:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.newchat > .inputs .content .attachments > .attachment > .delete > * {
+    font-size: 0.6vw;
+    color: white;
+}
+
+.newchat .more {
+    position: absolute;
+    bottom: -0.5vw;
+    left: 8%;
+}
+
+.more:hover {
+    cursor: pointer;
+}
+
+.more > .more-items {
+    position: relative;
+    bottom: 0%;
+    width: 1.3vw;
+    height: 1.3vw;
+    background-color: #31a8dfe1;
+    border-radius: 3vw;
+    color: white;
+    font-size: 0.65vw;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+.more > .more-items > .icon {
+    position: relative;
+    top: 10%;
+    margin: 0 auto;
+    margin-bottom: 0.2vw;
+
+    color: white;
+    width: fit-content;
+    font-size: 0.7vw;
+
+    opacity: 0.0;
+    transition: 0.15s;
+}
+
+.more.active > .more-items > .icon {
+    opacity: 1.0;
+}
+
+.more > .more-items > .icon:hover {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.more > .more-items > .open-more {
+    position: absolute;
+    bottom: 0;
+    width: 1.3vw;
+    height: 1.3vw;
+    background-color: #31a8df;
+    border-radius: 3vw;
+
+    color: white;
+    font-size: 0.65vw;
+    transition: 0.2s;
+    z-index: 99;
+}
+
+.more > .more-items > .open-more > .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.more > .more-items > .open-more:hover {
+    background-color: #4ab7e9;
+}
+
+.location {
+    color: #31A7DF;
+    text-decoration: none;
+}
+
+.other .location {
+    color: #b0e2ff;
+    text-decoration: none;
+}
+
+/* mygtukÅ³ stiliai */
+.messages .fill {
+    border: 0;
+    color: white;
+    background-color: #31A7DF;
+}
+
+.messages .nofill {
+    background: rgba(255, 255, 255, 0.02);
+    border: solid 0.1vw rgba(163, 175, 197, 0.1);
+    color: #A3AFC5;
+}
+
+.messages .fill:hover {
+    background-color: #57c3f5;
+}
+
+.messages .nofill:hover {
+    background-color: rgba(163, 175, 197, 0.15);
+}
+
+.newchat .fill {
+    border: 0;
+    color: white;
+    background-color: #31A7DF;
+}
+
+.newchat .nofill {
+    background: rgba(255, 255, 255, 0.02);
+    border: solid 0.1vw rgba(163, 175, 197, 0.1);
+    color: #A3AFC5;
+}
+
+.newchat .fill:hover {
+    background-color: #57c3f5;
+}
+
+.newchat .nofill:hover {
+    background-color: rgba(163, 175, 197, 0.15);
+}
